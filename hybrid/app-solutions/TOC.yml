@@ -1,0 +1,74 @@
+- name: Documentación sobre la ventajas híbrida de Azure
+  href: index.yml
+- name: Información general
+  items:
+    - name: Ejemplos de soluciones y patrones híbridos
+      href: overview-patterns-solution-examples.md
+- name: Patrones
+  items:
+    - name: Single
+      items:
+        - name: Escalado de toda la nube
+          href: pattern-cross-cloud-scale.md
+        - name: CI/CD híbridas de DevOps
+          href: pattern-cicd-pipeline.md
+        - name: Aplicación distribuida geográficamente
+          href: pattern-geo-distributed.md
+        - name: Retransmisión híbrida
+          href: pattern-hybrid-relay.md
+        - name: Datos en capas
+          href: pattern-tiered-data-analytics.md
+        - name: Entrenamiento del modelo de aprendizaje automático en el perímetro
+          href: pattern-train-ml-model-at-edge.md
+    - name: Multi
+      items:
+        - name: Escenario de escalado entre nubes (datos locales)
+          href: pattern-cross-cloud-scale-onprem-data.md
+        - name: Detección de afluencia de compradores (comercio minorista)
+          href: pattern-retail-footfall-detection.md
+        - name: Detección de existencias agotadas en el perímetro
+          href: pattern-out-of-stock-at-edge.md
+- name: Guías de implementación de soluciones
+  items:
+    - name: Escalado de toda la nube
+      href: solution-deployment-guide-cross-cloud-scaling.md
+    - name: Escenario de escalado entre nubes (datos locales)
+      href: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
+    - name: CI/CD híbridas de DevOps
+      href: 'https://aka.ms/hybriddevopsdeploy'
+    - name: Detección de afluencia de compradores (comercio minorista)
+      href: solution-deployment-guide-retail-footfall-detection.md
+    - name: Aplicación distribuida geográficamente
+      href: solution-deployment-guide-geo-distributed.md
+    - name: Conectividad híbrida
+      href: solution-deployment-guide-connectivity.md
+    - name: Identidad híbrida
+      href: solution-deployment-guide-identity.md
+    - name: Retransmisión híbrida
+      href: 'https://aka.ms/hybridrelaydeployment'
+    - name: Datos en capas
+      href: 'https://aka.ms/tiereddatadeploy'
+    - name: MongoDB de alta disponibilidad
+      href: solution-deployment-guide-mongodb-ha.md
+    - name: "SQL\_Server\_2016 de alta disponibilidad"
+      href: solution-deployment-guide-sql-ha.md
+    - name: Existencias agotadas en el perímetro
+      href: 'https://aka.ms/edgeinferencingdeploy'
+    - name: Entrenamiento de modelos de aprendizaje automático en el perímetro
+      href: 'https://aka.ms/edgetrainingdeploy'
+- name: Conceptos
+  items:
+    - name: Consideraciones de diseño de aplicaciones híbridas
+      href: overview-app-design-considerations.md
+- name: Temas relacionados
+  items:
+    - name: Documentación de Azure
+      href: /azure
+    - name: Documentación de Azure Stack
+      href: /azure-stack
+- name: Recursos
+  items:
+    - name: Microsoft Learn
+      href: /learn
+    - name: Preguntas y respuestas acerca de Microsoft
+      href: /answers/products/
