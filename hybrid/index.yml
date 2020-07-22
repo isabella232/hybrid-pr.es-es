@@ -10,18 +10,18 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 06/30/2020
-  ms.openlocfilehash: ac27dd4f6dd719fade045f33750502fa2572bd9a
-  ms.sourcegitcommit: 6914306c4a326c4532d2fc7f325953b56d9d92f8
+  ms.openlocfilehash: ee69d8f1110166063edc5a4b2cdbfaf36b402868
+  ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 07/01/2020
-  ms.locfileid: "85594062"
+  ms.lasthandoff: 07/20/2020
+  ms.locfileid: "86477310"
 highlightedContent:
   items:
   - title: Azure Hybrid Virtual Event
     itemType: video
     url: https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf
-  - title: 'Build 2020: sesiones de entornos híbridos'
+  - title: 'Build 2020: sesiones acerca de entornos híbridos'
     itemType: video
     url: https://mybuild.microsoft.com/sessions?q=hybrid&g=%255B%2522on-demand%2522%255D
   - title: 'Build 2020: sesiones de Azure Arc'
@@ -62,7 +62,7 @@ conceptualContent:
   title: Tecnologías de habilitación de entornos híbridos
   summary: Servicios y productos para compilar y trabajar con soluciones híbridas.
   items:
-  - title: AI + Aprendizaje automático
+  - title: IA + Machine Learning
     links:
     - url: /azure/bot-service
       itemType: overview
@@ -76,7 +76,7 @@ conceptualContent:
     - url: /azure/machine-learning/
       itemType: overview
       text: Azure Machine Learning
-  - title: Contenedores
+  - title: Containers
     links:
     - url: /azure/azure-arc/kubernetes/
       itemType: overview
@@ -106,7 +106,7 @@ conceptualContent:
       text: Servicios de datos habilitados para Azure Arc (registro de versión preliminar privada)
     - url: /azure/azure-sql-edge/overview
       itemType: overview
-      text: Azure SQL Edge (versión preliminar)
+      text: Azure SQL Edge (versión preliminar)
   - title: Desarrollo e integración
     links:
     - url: /azure-stack/operator/azure-stack-app-service-overview
@@ -136,7 +136,7 @@ conceptualContent:
     - url: /azure-stack/operator/event-hubs-rp-overview
       itemType: overview
       text: Event Hubs en Azure Stack Hub
-  - title: perimetral
+  - title: Edge
     links:
     - url: /azure/databox-online/data-box-gateway-overview
       itemType: overview
@@ -172,7 +172,7 @@ conceptualContent:
       text: Azure Sentinel
     - url: /azure/active-directory/devices/concept-azure-ad-join-hybrid
       itemType: overview
-      text: Dispositivos híbridos unidos a Azure AD
+      text: Dispositivos unidos a Azure AD híbrido
   - title: Administración
     links:
     - url: https://azure.microsoft.com/services/azure-arc/hybrid-data-services/
@@ -221,10 +221,10 @@ conceptualContent:
       text: Azure Relay
     - url: /azure/traffic-manager/
       itemType: overview
-      text: Administrador de tráfico de Azure
+      text: Azure Traffic Manager
     - url: /azure/virtual-network/
       itemType: overview
-      text: Azure Virtual Network
+      text: Microsoft Azure Virtual Network
     - url: /azure/vpn-gateway/
       itemType: overview
       text: Azure VPN Gateway
@@ -251,36 +251,36 @@ additionalContent:
     items:
     - title: Ejemplos de soluciones y patrones de aplicaciones híbridas
       links:
-      - url: /hybrid/app-solutions/overview-patterns-solution-examples
+      - url: ./app-solutions/overview-patterns-solution-examples.md
         text: ¿Qué son los ejemplos de soluciones y patrones?
-      - url: /hybrid/app-solutions/overview-app-design-considerations
+      - url: ./app-solutions/overview-app-design-considerations.md
         text: Consideraciones de diseño de aplicaciones híbridas
     - title: Exploración de patrones híbridos
       links:
-      - url: /hybrid/app-solutions/pattern-cross-cloud-scale
+      - url: ./app-solutions/pattern-cross-cloud-scale.md
         text: Escalado de toda la nube
-      - url: /hybrid/app-solutions/pattern-cicd-pipeline
+      - url: ./app-solutions/pattern-cicd-pipeline.md
         text: CI/CD híbridas de DevOps
-      - url: /hybrid/app-solutions/pattern-retail-footfall-detection
+      - url: ./app-solutions/pattern-retail-footfall-detection.md
         text: Detección de afluencia de compradores (comercio minorista)
-      - url: /hybrid/app-solutions/pattern-geo-distributed
+      - url: ./app-solutions/pattern-geo-distributed.md
         text: Aplicación distribuida geográficamente
     - title: Implementación de ejemplos de soluciones híbridas
       links:
-      - url: /hybrid/app-solutions/solution-deployment-guide-cross-cloud-scaling
+      - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
         text: Escalado de toda la nube
       - url: https://aka.ms/hybriddevopsdeploy
         text: CI/CD híbridas de DevOps
-      - url: /hybrid/app-solutions/solution-deployment-guide-retail-footfall-detection
+      - url: ./app-solutions/solution-deployment-guide-retail-footfall-detection.md
         text: Detección de afluencia de compradores (comercio minorista)
-      - url: /hybrid/app-solutions/solution-deployment-guide-geo-distributed
+      - url: ./app-solutions/solution-deployment-guide-geo-distributed.md
         text: Aplicación distribuida geográficamente
   - title: Recursos adicionales
     items:
     - title: Recursos generales
       links:
       - url: /azure-stack/operator/compare-azure-azure-stack
-        text: Azure global frente a Azure Stack
+        text: Azure Global frente a Azure Stack
       - url: https://azure.microsoft.com/overview/azure-hybrid/
         text: Funcionalidades del entorno híbrido de Azure
       - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
@@ -306,7 +306,7 @@ additionalContent:
       - url: https://azure.github.io/Vision-AI-DevKit-Pages/
         text: Kit de desarrollador de inteligencia artificial de Vision
       - url: /visualstudio/azure/
-        text: Desarrollo de Visual Studio Azure
+        text: Desarrollo de Visual Studio Azure
     - title: Compatibilidad y otros recursos
       links:
       - url: https://azure.microsoft.com/blog/topics/hybrid/
