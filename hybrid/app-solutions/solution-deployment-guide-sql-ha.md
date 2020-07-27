@@ -7,16 +7,16 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ff6d5b9667e63a6b8d232b6dd93db2d8b12fd46d
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
-ms.translationtype: MT
+ms.openlocfilehash: 85b859457b9b54a973c5fc23329b927212b60a07
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911926"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477089"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Implementar un grupo de disponibilidad de SQL Server 2016 en Azure y Azure Stack Hub
 
-Este artículo le guiará a lo largo de una implementación automatizada de un clúster de SQL Server 2016 Enterprise de alta disponibilidad (HA) con un sitio de recuperación ante desastres (DR) asincrónica entre dos entornos de Azure Stack Hub. Para obtener más información acerca de SQL Server 2016 y la alta disponibilidad, vea [Grupos de disponibilidad Always On: una solución de alta disponibilidad y recuperación ante desastres](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016).
+Este artículo le guiará a lo largo de una implementación automatizada de un clúster de SQL Server 2016 Enterprise de alta disponibilidad (HA) con un sitio de recuperación ante desastres (DR) asincrónica entre dos entornos de Azure Stack Hub. Para obtener más información acerca de SQL Server 2016 y la alta disponibilidad, vea [Grupos de disponibilidad Always On: una solución de alta disponibilidad y recuperación ante desastres](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016).
 
 En esta solución, creará un entorno de ejemplo para:
 
@@ -40,9 +40,9 @@ En esta solución, creará un entorno de ejemplo para:
 - Dos sistemas integrados de Azure Stack Hub (Azure Stack Hub). Este desarrollo no funciona en el Kit de desarrollo de Azure Stack (ASDK). Para más información sobre Azure Stack Hub, consulte la [introducción a Azure Stack Hub](https://azure.microsoft.com/overview/azure-stack/).
 - Una suscripción de inquilino en cada instancia de Azure Stack Hub.
   - **Tome nota de cada identificador de suscripción y del punto de conexión de Azure Resource Manager para cada instancia de Azure Stack Hub.**
-- Una entidad de servicio de Azure Active Directory (Azure AD) que tenga permisos para la suscripción del inquilino en cada instancia de Azure Stack Hub. Es posible que deba crear dos entidades de servicio si las instancias de Azure Stack Hub se implementan en diferentes inquilinos de Azure AD. Para aprender a crear una entidad de servicio para Azure Stack Hub, consulte [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).
+- Una entidad de servicio de Azure Active Directory (Azure AD) que tenga permisos para la suscripción del inquilino en cada instancia de Azure Stack Hub. Es posible que deba crear dos entidades de servicio si las instancias de Azure Stack Hub se implementan en diferentes inquilinos de Azure AD. Para aprender a crear una entidad de servicio para Azure Stack Hub, consulte [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack Hub](/azure-stack/user/azure-stack-create-service-principals).
   - **Tome nota del id. de aplicación, el secreto de cliente y el nombre de inquilino (xxxxx.onmicrosoft.com) de cada entidad de servicio.**
-- SQL Server 2016 Enterprise sindicado en el Marketplace de cada instancia de Azure Stack Hub. Para más información acerca de la redifusión de Marketplace, consulte [Descarga de elementos de Marketplace en Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item).
+- SQL Server 2016 Enterprise sindicado en el Marketplace de cada instancia de Azure Stack Hub. Para más información acerca de la redifusión de Marketplace, consulte [Descarga de elementos de Marketplace en Azure Stack Hub](/azure-stack/operator/azure-stack-download-azure-marketplace-item).
     **Asegúrese de que su organización disponga de las licencias de SQL correspondientes.**
 - [Docker para Windows](https://docs.docker.com/docker-for-windows/) instalado en la máquina local.
 
@@ -105,6 +105,6 @@ Las imágenes de Docker para cada implementación eliminan los problemas de depe
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Use SQL Server Management Studio para conmutar por error el clúster. Consulte [Realización de una conmutación por error manual forzada de un grupo de disponibilidad Always On (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
+- Use SQL Server Management Studio para conmutar por error el clúster. Consulte [Realización de una conmutación por error manual forzada de un grupo de disponibilidad Always On (SQL Server)](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
 - Más información sobre las aplicaciones en la nube híbrida. Consulte [Soluciones de nube híbrida.](https://aka.ms/azsdevtutorials)
 - Use sus propios datos o modifique el código según este ejemplo en [GitHub](https://github.com/Azure-Samples/azure-intelligent-edge-patterns).

@@ -7,20 +7,20 @@ ms.date: 06/07/2020
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4fd52f76baad8059e130adfc01cdd0152b40a510
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
-ms.translationtype: MT
+ms.openlocfilehash: c56575ac8ea6cb35d60bb9419269db89b0295721
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911956"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477225"
 ---
 # <a name="hybrid-app-design-considerations"></a>Consideraciones de diseño de aplicaciones híbridas
 
 Microsoft Azure es la única nube híbrida coherente. Permite volver a usar las inversiones en desarrollo y habilita aplicaciones que pueden abarcar Azure global, las nubes soberanas de Azure y Azure Stack, que es una extensión de Azure en su centro de datos. Las aplicaciones que se extienden hasta diversas nubes también se conocen como *aplicaciones híbridas*.
 
-En la [*Guía de la arquitectura de aplicaciones en Azure*](https://docs.microsoft.com/azure/architecture/guide) se describe un enfoque estructurado para diseñar aplicaciones escalables, resistentes y de alta disponibilidad. Las consideraciones de la [*Guía de la arquitectura de aplicaciones en Azure*](https://docs.microsoft.com/azure/architecture/guide) se aplican por igual a las aplicaciones diseñadas para una sola nube y a las que abarcan varias nubes.
+En la [*Guía de la arquitectura de aplicaciones en Azure*](/azure/architecture/guide) se describe un enfoque estructurado para diseñar aplicaciones escalables, resistentes y de alta disponibilidad. Las consideraciones de la [*Guía de la arquitectura de aplicaciones en Azure*](/azure/architecture/guide) se aplican por igual a las aplicaciones diseñadas para una sola nube y a las que abarcan varias nubes.
 
-En este artículo se amplían los [*Fundamentos de calidad del software*](https://docs.microsoft.com/azure/architecture/guide/pillars) de la [*Guía de la arquitectura*](https://docs.microsoft.com/azure/architecture/guide/) [*de aplicaciones en Azure*](https://docs.microsoft.com/azure/architecture/guide/), centrándose específicamente en el diseño de aplicaciones híbridas. Además, se agrega un fundamento de *ubicación*, ya que las aplicaciones híbridas no son exclusivas de una nube ni de un centro de datos local.
+En este artículo se amplían los [*Fundamentos de calidad del software*](/azure/architecture/guide/pillars) de la [*Guía de la arquitectura*](/azure/architecture/guide/) [*de aplicaciones en Azure*](/azure/architecture/guide/), centrándose específicamente en el diseño de aplicaciones híbridas. Además, se agrega un fundamento de *ubicación*, ya que las aplicaciones híbridas no son exclusivas de una nube ni de un centro de datos local.
 
 Los escenarios híbridos varían considerablemente con los recursos que están disponibles para el desarrollo y abarcan consideraciones como la geografía, la seguridad, el acceso a Internet, etc. Aunque en esta guía no se pueden enumerar las consideraciones específicas del usuario, se pueden proporcionar algunas directrices y procedimientos recomendados clave que este puede seguir. Un diseño, una configuración, una implementación y un mantenimiento correctos de una arquitectura de aplicación híbrida implica muchas consideraciones de diseño que es posible que no conozca.
 
@@ -93,7 +93,7 @@ La ubicación es la importante tarea de posicionar los componentes para que pued
 
 **Comprobar las ubicaciones necesarias.** Asegúrese de que la aplicación o cualquiera de sus componentes debe funcionar en una nube específica o requiere certificación para ella. Esto puede incluir requisitos de soberanía de la empresa o dictados por la normativa. Además, determine si se requieren operaciones locales para una ubicación o configuración regional determinada.
 
-**Determinar las dependencias de conectividad.** Las ubicaciones necesarias y otros factores pueden dictar las dependencias de conectividad entre los componentes. Al colocar los componentes, determine la conectividad y la seguridad óptimas para la comunicación entre ellos. Las opciones incluyen [*VPN*,](https://docs.microsoft.com/azure/vpn-gateway/) [*ExpressRoute*](https://docs.microsoft.com/azure/expressroute/) y [*Conexiones híbridas*.](https://docs.microsoft.com/azure/app-service/app-service-hybrid-connections)
+**Determinar las dependencias de conectividad.** Las ubicaciones necesarias y otros factores pueden dictar las dependencias de conectividad entre los componentes. Al colocar los componentes, determine la conectividad y la seguridad óptimas para la comunicación entre ellos. Las opciones incluyen [*VPN*,](/azure/vpn-gateway/) [*ExpressRoute*](/azure/expressroute/) y [*Conexiones híbridas*.](/azure/app-service/app-service-hybrid-connections)
 
 **Evaluar las capacidades de la plataforma.** Consulte si el proveedor de recursos necesario para cada componente de la aplicación está disponible en la nube y si el ancho de banda puede adaptarse a los requisitos de rendimiento y latencia esperados.
 
@@ -109,7 +109,7 @@ La ubicación es la importante tarea de posicionar los componentes para que pued
 
 La escalabilidad es la capacidad de un sistema de controlar un aumento de la carga en una aplicación, que puede variar con el tiempo a medida que otros factores y fuerzas afectan al tamaño de la audiencia además de al tamaño y el ámbito de la aplicación.
 
-Para obtener la explicación básica de este fundamento, consulte [*Escalabilidad*](https://docs.microsoft.com/azure/architecture/guide/pillars#scalability) en los cinco fundamentos de calidad de la arquitectura.
+Para obtener la explicación básica de este fundamento, consulte [*Escalabilidad*](/azure/architecture/guide/pillars#scalability) en los cinco fundamentos de calidad de la arquitectura.
 
 Un enfoque de escalado horizontal de las aplicaciones híbridas permite agregar más instancias para satisfacer la demanda y luego deshabilitarlas durante períodos más tranquilos.
 
@@ -155,7 +155,7 @@ Para obtener la explicación básica de este fundamento, consulte [*Disponibilid
 
 La resistencia es la capacidad de un sistema y una aplicación híbridos de recuperarse de los errores y seguir funcionando. El objetivo de la resistencia es devolver la aplicación a un estado plenamente operativo después de un error. Las estrategias de resistencia incluyen soluciones como la copia de seguridad, la replicación y la recuperación ante desastres.
 
-Para obtener la explicación básica de este fundamento, consulte [*Resistencia*](https://docs.microsoft.com/azure/architecture/guide/pillars#resiliency) en los cinco fundamentos de calidad de la arquitectura.
+Para obtener la explicación básica de este fundamento, consulte [*Resistencia*](/azure/architecture/guide/pillars#resiliency) en los cinco fundamentos de calidad de la arquitectura.
 
 ### <a name="resiliency-checklist"></a>Lista de comprobación de resistencia
 
@@ -201,7 +201,7 @@ Determine las partes de la aplicación que requieren supervisión.
 
 La seguridad es una de las principales consideraciones de cualquier aplicación en la nube y es incluso más importante para las aplicaciones híbridas en la nube.
 
-Para obtener la explicación básica de este fundamento, consulte [*Seguridad*](https://docs.microsoft.com/azure/architecture/guide/pillars#security) en los cinco fundamentos de calidad de la arquitectura.
+Para obtener la explicación básica de este fundamento, consulte [*Seguridad*](/azure/architecture/guide/pillars#security) en los cinco fundamentos de calidad de la arquitectura.
 
 ### <a name="security-checklist"></a>Lista de comprobación de seguridad
 

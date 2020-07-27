@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: b34ba7c10ff5f658d645923ae8b6de2fb2607ccb
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
-ms.translationtype: MT
+ms.openlocfilehash: f6064aaa1087a3c0cfc26e09371e81752c777edb
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84912100"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477276"
 ---
 # <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Implementar una solución MongoDB de alta disponibilidad en Azure y Azure Stack Hub
 
@@ -40,9 +40,9 @@ En esta solución, creará un entorno de ejemplo para:
 - Dos sistemas integrados de Azure Stack Hub (Azure Stack Hub). Esta implementación no funciona en el Kit de desarrollo de Azure Stack (ASDK). Para obtener más información sobre Azure Stack Hub, consulte [¿Qué es Azure Stack Hub?](https://azure.microsoft.com/products/azure-stack/hub/)
   - Una suscripción de inquilino en cada instancia de Azure Stack Hub. 
   - **Tome nota de cada identificador de suscripción y del punto de conexión de Azure Resource Manager para cada instancia de Azure Stack Hub.**
-- Una entidad de servicio de Azure Active Directory (Azure AD) que tenga permisos para la suscripción del inquilino en cada instancia de Azure Stack Hub. Es posible que deba crear dos entidades de servicio si las instancias de Azure Stack Hub se implementan en diferentes inquilinos de Azure AD. Para aprender a crear una entidad de servicio para Azure Stack Hub, consulte [Uso de una identidad de aplicación para acceder a recursos de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).
+- Una entidad de servicio de Azure Active Directory (Azure AD) que tenga permisos para la suscripción del inquilino en cada instancia de Azure Stack Hub. Es posible que deba crear dos entidades de servicio si las instancias de Azure Stack Hub se implementan en diferentes inquilinos de Azure AD. Para aprender a crear una entidad de servicio para Azure Stack Hub, consulte [Uso de una identidad de aplicación para acceder a recursos de Azure Stack Hub](/azure-stack/user/azure-stack-create-service-principals).
   - **Tome nota del id. de aplicación, el secreto de cliente y el nombre de inquilino (xxxxx.onmicrosoft.com) de cada entidad de servicio.**
-- Ubuntu 16.04 sindicado en el Marketplace de cada instancia de Azure Stack Hub. Para más información acerca de la redifusión de Marketplace, consulte [Descarga de elementos de Marketplace en Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item).
+- Ubuntu 16.04 sindicado en el Marketplace de cada instancia de Azure Stack Hub. Para más información acerca de la redifusión de Marketplace, consulte [Descarga de elementos de Marketplace en Azure Stack Hub](/azure-stack/operator/azure-stack-download-azure-marketplace-item).
 - [Docker para Windows](https://docs.docker.com/docker-for-windows/) instalado en la máquina local.
 
 ## <a name="get-the-docker-image"></a>Obtener la imagen de Docker

@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 306cc9604a8e919724f9f76b7e5122d534d2d1ae
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
-ms.translationtype: MT
+ms.openlocfilehash: e26056a9507a7467473b009725d4f210d9d59ec8
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911957"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477242"
 ---
 # <a name="devops-pattern"></a>Patrón DevOps
 
@@ -47,7 +47,7 @@ El patrón DevOps está pensado para garantizar la coherencia entre las implemen
 - ¿Los parámetros de implementación funcionarán en todos los entornos de destino?
 - ¿Las propiedades específicas de los recursos están disponibles en todas las nubes de destino?
 
-Para obtener más información, consulte [Desarrollo de plantillas de Azure Resource Manager para mantener la coherencia en la nube](https://docs.microsoft.com/azure/azure-resource-manager/templates-cloud-consistency).
+Para obtener más información, consulte [Desarrollo de plantillas de Azure Resource Manager para mantener la coherencia en la nube](/azure/azure-resource-manager/templates-cloud-consistency).
 
 Asimismo, a la hora de decidir cómo implementar este patrón, debe tener en cuenta los siguientes puntos:
 

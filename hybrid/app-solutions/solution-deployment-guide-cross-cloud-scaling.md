@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 740a8c0ec904fe8eb3f9744626bc9dd6655bdb52
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
-ms.translationtype: MT
+ms.openlocfilehash: 10cb042e2c6d0c6cb567e14072cd80bc663d686c
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84912131"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477344"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Implementación de una aplicación que se escala en toda la nube con Azure y Azure Stack Hub
 
@@ -68,7 +68,7 @@ La solución para toda la nube garantiza una administración sin problemas y una
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Obtención de un dominio personalizado y configuración de DNS
 
-Actualice el archivo de zona DNS para el dominio. Azure AD comprobará la propiedad del nombre de dominio personalizado. Use [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) para los registros DNS de Azure/Office 365/external dentro de Azure, o bien agregue la entrada DNS a [un registrador DNS diferente](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Actualice el archivo de zona DNS para el dominio. Azure AD comprobará la propiedad del nombre de dominio personalizado. Use [Azure DNS](/azure/dns/dns-getstarted-portal) para los registros DNS de Azure/Office 365/external dentro de Azure, o bien agregue la entrada DNS a [un registrador DNS diferente](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 1. Registre un dominio personalizado con un registrador público.
 2. Inicie sesión en el registrador de nombres de dominio para el dominio. Puede que se requiera un administrador autorizado para realizar las actualizaciones de DNS.
@@ -97,7 +97,7 @@ Azure Repos
 
 ### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Creación de una implementación de aplicación web autocontenida para App Services en ambas nubes
 
-1. Edite el archivo **WebApplication.csproj**. Seleccione `Runtimeidentifier` y agregue `win10-x64` (consulte el documento acerca de las [implementaciones autocontenidas](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf)).
+1. Edite el archivo **WebApplication.csproj**. Seleccione `Runtimeidentifier` y agregue `win10-x64` (consulte el documento acerca de las [implementaciones autocontenidas](/dotnet/core/deploying/deploy-with-vs#simpleSelf)).
 
     ![Editar el archivo del proyecto de aplicación web](media/solution-deployment-guide-cross-cloud-scaling/image3.png)
 
@@ -113,7 +113,7 @@ Azure Repos
 
     ![Agregar código a la aplicación web](media/solution-deployment-guide-cross-cloud-scaling/image4.png)
 
-3. Ejecute la compilación. El proceso de [compilación de implementación autocontenida](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) publicará los artefactos que se pueden ejecutar en Azure y Azure Stack Hub.
+3. Ejecute la compilación. El proceso de [compilación de implementación autocontenida](/dotnet/core/deploying/deploy-with-vs#simpleSelf) publicará los artefactos que se pueden ejecutar en Azure y Azure Stack Hub.
 
 ## <a name="use-an-azure-hosted-agent"></a>Uso de un agente hospedado de Azure
 
@@ -211,7 +211,7 @@ Azure Pipelines y Azure DevOps Services proporcionan una canalización con una g
 21. Guarde todos los cambios.
 
 > [!Note]  
-> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) cuando se creó una definición de versión desde una plantilla. Estos valores de configuración no se pueden modificar en la configuración de tareas; para hacerlo, debe seleccionar el elemento del entorno principal.
+> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) cuando se creó una definición de versión desde una plantilla. Estos valores de configuración no se pueden modificar en la configuración de tareas; para hacerlo, debe seleccionar el elemento del entorno principal.
 
 ## <a name="publish-to-azure-stack-hub-via-visual-studio"></a>Publicación en Azure Stack Hub mediante Visual Studio
 
@@ -254,7 +254,7 @@ Use [plantillas de Azure Resource Manager](https://azure.microsoft.com/resources
 
 #### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Creación de una implementación de aplicación web autocontenida para App Services en ambas nubes
 
-1. Edite el archivo **WebApplication.csproj**: Seleccione `Runtimeidentifier` y, después, agregue `win10-x64`. Para más información, consulte la documentación de la [implementación independiente](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf).
+1. Edite el archivo **WebApplication.csproj**: Seleccione `Runtimeidentifier` y, después, agregue `win10-x64`. Para más información, consulte la documentación de la [implementación independiente](/dotnet/core/deploying/deploy-with-vs#simpleSelf).
 
 2. Compruebe el código en Azure Repos mediante Team Explorer.
 
@@ -268,7 +268,7 @@ Use [plantillas de Azure Resource Manager](https://azure.microsoft.com/resources
 
 3. En **Argumentos**, agregue el código **-r win10-x64**. Esta adición es necesaria para desencadenar una implementación independiente con .NET Core.
 
-4. Ejecute la compilación. El proceso de [compilación de implementación autocontenida](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) publicará los artefactos que se pueden ejecutar en Azure y Azure Stack Hub.
+4. Ejecute la compilación. El proceso de [compilación de implementación autocontenida](/dotnet/core/deploying/deploy-with-vs#simpleSelf) publicará los artefactos que se pueden ejecutar en Azure y Azure Stack Hub.
 
 #### <a name="use-an-azure-hosted-build-agent"></a>Uso de un agente de compilación hospedado en Azure
 
@@ -329,7 +329,7 @@ La creación de una definición de versión es el último paso en el proceso de 
 23. Guarde todos los cambios.
 
 > [!Note]  
-> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) cuando se creó una definición de versión desde una plantilla. Esta configuración no puede modificarse en la configuración de la tarea, pero sí en los elementos del entorno primario.
+> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) cuando se creó una definición de versión desde una plantilla. Esta configuración no puede modificarse en la configuración de la tarea, pero sí en los elementos del entorno primario.
 
 ## <a name="create-a-release"></a>Creación de una versión
 
@@ -361,4 +361,4 @@ Un servicio de nube múltiple flexible y sólido proporciona seguridad de los da
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Para más información sobre los patrones de nube de Azure, consulte [Patrones de diseño en la nube](https://docs.microsoft.com/azure/architecture/patterns).
+- Para más información sobre los patrones de nube de Azure, consulte [Patrones de diseño en la nube](/azure/architecture/patterns).

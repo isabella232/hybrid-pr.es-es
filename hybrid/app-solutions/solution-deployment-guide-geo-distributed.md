@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 8f2b7e48a62896acfce7293dcd4f18d5a43add01
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
-ms.translationtype: MT
+ms.openlocfilehash: 741ddf2c3ed234788af359dd233f6a656fbea13c
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84912046"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477361"
 ---
 # <a name="direct-traffic-with-a-geo-distributed-app-using-azure-and-azure-stack-hub"></a>Dirigir el tráfico con una aplicación distribuida geográficamente mediante Azure y Azure Stack Hub
 
@@ -52,7 +52,7 @@ Antes de crear el entorno de una aplicación distribuida, resulta útil conocer 
 
 - **Dominio personalizado para la aplicación:** ¿cuál es el nombre de dominio personalizado que los clientes usarán para acceder a la aplicación? En el caso de la aplicación de ejemplo, el nombre de dominio personalizado es *www\.scalableasedemo.com*.
 
-- **Dominio de Traffic Manager:** se elige nombre de dominio al crear un [perfil de Azure Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-profiles). Este nombre se combina con el sufijo *trafficmanager.net* para registrar una entrada de dominio que administra Traffic Manager. Para la aplicación de ejemplo, el nombre elegido es *scalable-ase-demo*. Como resultado, el nombre de dominio completo administrado por Traffic Manager es *scalable-ase-demo.trafficmanager.net*.
+- **Dominio de Traffic Manager:** se elige nombre de dominio al crear un [perfil de Azure Traffic Manager](/azure/traffic-manager/traffic-manager-manage-profiles). Este nombre se combina con el sufijo *trafficmanager.net* para registrar una entrada de dominio que administra Traffic Manager. Para la aplicación de ejemplo, el nombre elegido es *scalable-ase-demo*. Como resultado, el nombre de dominio completo administrado por Traffic Manager es *scalable-ase-demo.trafficmanager.net*.
 
 - **Estrategia para escalar la superficie de la aplicación:** Decida si la superficie de la aplicación se va a distribuir entre varios entornos de App Service Environment de una sola región, de varias regiones o de una mezcla de ambas opciones. La decisión debería basarse en las expectativas de dónde se vaya a originar el tráfico del cliente y de la escalabilidad del resto de la infraestructura de back-end complementaria de una aplicación. Por ejemplo, en el caso de una aplicación totalmente sin estado, se puede escalar una aplicación de forma masiva mediante una combinación de varios entornos de App Service Environment por región de Azure, multiplicados por los entornos de App Service Environment implementados en varias regiones de Azure. Con más de 15 regiones de Azure globales entre las que elegir, los clientes pueden realmente crear una superficie de aplicación de gran escala en todo el mundo. En el caso de la aplicación de ejemplo que se usa aquí, se crearon tres entornos de App Service Environment en una sola región de Azure (Centro-sur de EE. UU.).
 
@@ -84,7 +84,7 @@ Se requieren una suscripción de Azure y la instalación de Azure Stack Hub.
 
 ### <a name="obtain-a-custom-domain-and-configure-dns"></a>Obtención de un dominio personalizado y configuración de DNS
 
-Actualice el archivo de zona DNS para el dominio. Azure AD puede entonces comprobar la propiedad del nombre de dominio personalizado. Use [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) para los registros DNS de Azure/Office 365/external dentro de Azure, o bien agregue la entrada DNS a [un registrador DNS diferente](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Actualice el archivo de zona DNS para el dominio. Azure AD puede entonces comprobar la propiedad del nombre de dominio personalizado. Use [Azure DNS](/azure/dns/dns-getstarted-portal) para los registros DNS de Azure/Office 365/external dentro de Azure, o bien agregue la entrada DNS a [un registrador DNS diferente](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 1. Registre un dominio personalizado con un registrador público.
 
@@ -113,7 +113,7 @@ Configure la canalización de integración y entrega continuas (CI/CD) híbrida 
 
 ### <a name="create-web-app-deployment-in-both-clouds"></a>Creación de una implementación de aplicaciones web en ambas nubes
 
-1. Edite el archivo **WebApplication.csproj**: Seleccione `Runtimeidentifier` y agregue `win10-x64`. (Consulte la documentación de [Implementaciones autocontenidas](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf)).
+1. Edite el archivo **WebApplication.csproj**: Seleccione `Runtimeidentifier` y agregue `win10-x64`. (Consulte la documentación de [Implementaciones autocontenidas](/dotnet/core/deploying/deploy-with-vs#simpleSelf)).
 
     ![Edición del archivo de proyecto de aplicación web en Visual Studio](media/solution-deployment-guide-geo-distributed/image3.png)
 
@@ -129,7 +129,7 @@ Configure la canalización de integración y entrega continuas (CI/CD) híbrida 
 
     ![Incorporación de código a la definición de compilación en Azure Pipelines](media/solution-deployment-guide-geo-distributed/image4.png)
 
-3. **Ejecute la compilación**. El proceso de [compilación de implementación autocontenida](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) publicará los artefactos que se pueden ejecutar en Azure y Azure Stack Hub.
+3. **Ejecute la compilación**. El proceso de [compilación de implementación autocontenida](/dotnet/core/deploying/deploy-with-vs#simpleSelf) publicará los artefactos que se pueden ejecutar en Azure y Azure Stack Hub.
 
 #### <a name="using-an-azure-hosted-agent"></a>Uso de un agente hospedado de Azure
 
@@ -229,11 +229,11 @@ Azure DevOps Services proporcionan una canalización con una gran capacidad de c
 21. Guarde todos los cambios.
 
 > [!Note]  
-> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) cuando se creó una definición de versión desde una plantilla. Estos valores de configuración no se pueden modificar en la configuración de tareas; para hacerlo, debe seleccionar el elemento del entorno principal.
+> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) cuando se creó una definición de versión desde una plantilla. Estos valores de configuración no se pueden modificar en la configuración de tareas; para hacerlo, debe seleccionar el elemento del entorno principal.
 
 ## <a name="part-2-update-web-app-options"></a>Parte 2: Actualizar las opciones de la aplicación web
 
-[Azure App Service](https://docs.microsoft.com/azure/app-service/overview) proporciona un servicio de hospedaje web muy escalable y con aplicación de revisiones de un modo automático.
+[Azure App Service](/azure/app-service/overview) proporciona un servicio de hospedaje web muy escalable y con aplicación de revisiones de un modo automático.
 
 ![Azure App Service](media/solution-deployment-guide-geo-distributed/image27.png)
 
@@ -246,17 +246,17 @@ Azure DevOps Services proporcionan una canalización con una gran capacidad de c
 > [!Note]  
 > Se recomienda usar un CNAME para todos los nombres DNS personalizados, excepto un dominio raíz (por ejemplo, northwind.com).
 
-Para migrar un sitio en vivo y su nombre de dominio DNS a App Service, consulte [Migración de un nombre DNS activo a Azure App Service](https://docs.microsoft.com/azure/app-service/manage-custom-dns-migrate-domain).
+Para migrar un sitio en vivo y su nombre de dominio DNS a App Service, consulte [Migración de un nombre DNS activo a Azure App Service](/azure/app-service/manage-custom-dns-migrate-domain).
 
 ### <a name="prerequisites"></a>Prerrequisitos
 
 Para completar esta solución:
 
-- [Cree una aplicación de App Service](https://docs.microsoft.com/azure/app-service/) o use alguna aplicación que se haya creado para otra solución.
+- [Cree una aplicación de App Service](/azure/app-service/) o use alguna aplicación que se haya creado para otra solución.
 
 - Compre un nombre de dominio y asegure el acceso al registro DNS para el proveedor de dominio.
 
-Actualice el archivo de zona DNS para el dominio. Azure AD comprobará la propiedad del nombre de dominio personalizado. Use [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) para los registros DNS de Azure/Office 365/external dentro de Azure, o bien agregue la entrada DNS a [un registrador DNS diferente](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Actualice el archivo de zona DNS para el dominio. Azure AD comprobará la propiedad del nombre de dominio personalizado. Use [Azure DNS](/azure/dns/dns-getstarted-portal) para los registros DNS de Azure/Office 365/external dentro de Azure, o bien agregue la entrada DNS a [un registrador DNS diferente](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 - Registre un dominio personalizado con un registrador público.
 
@@ -267,14 +267,14 @@ Actualice el archivo de zona DNS para el dominio. Azure AD comprobará la propie
 Por ejemplo, para agregar entradas DNS a northwindcloud.com y www\.northwindcloud.com, configure los valores de DNS del dominio raíz northwindcloud.com.
 
 > [!Note]  
-> Un nombre de dominio puede adquirirse mediante [Azure Portal](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain). Para asignar un nombre DNS personalizado a una aplicación web, el [plan de App Service](https://azure.microsoft.com/pricing/details/app-service/) de dicha aplicación debe ser un nivel de pago (**Compartido**, **Básico**, **Estándar** o **Premium**).
+> Un nombre de dominio puede adquirirse mediante [Azure Portal](/azure/app-service/manage-custom-dns-buy-domain). Para asignar un nombre DNS personalizado a una aplicación web, el [plan de App Service](https://azure.microsoft.com/pricing/details/app-service/) de dicha aplicación debe ser un nivel de pago (**Compartido**, **Básico**, **Estándar** o **Premium**).
 
 ### <a name="create-and-map-cname-and-a-records"></a>Creación y asignación de los registros D y CNAME
 
 #### <a name="access-dns-records-with-domain-provider"></a>Acceso a los registros DNS con el proveedor de dominios
 
 > [!Note]  
->  Puede utilizar Azure DNS para configurar un nombre DNS personalizado para Azure Web Apps. Para más información, consulte [Usar Azure DNS para proporcionar la configuración de un dominio personalizado para un servicio de Azure](https://docs.microsoft.com/azure/dns/dns-custom-domain).
+>  Puede utilizar Azure DNS para configurar un nombre DNS personalizado para Azure Web Apps. Para más información, consulte [Usar Azure DNS para proporcionar la configuración de un dominio personalizado para un servicio de Azure](/azure/dns/dns-custom-domain).
 
 1. Inicie sesión en el sitio web de su proveedor principal.
 
@@ -355,14 +355,14 @@ En esta parte, seguiremos estos pasos:
 > - Automatizar el enlace de certificado SSL con scripts.
 
 > [!Note]  
-> Si es necesario, se obtendrá un certificado SSL de cliente en Azure Portal y se enlazará a la aplicación web. Para obtener más información, consulte el [tutorial sobre App Service Certificates](https://docs.microsoft.com/azure/app-service/web-sites-purchase-ssl-web-site).
+> Si es necesario, se obtendrá un certificado SSL de cliente en Azure Portal y se enlazará a la aplicación web. Para obtener más información, consulte el [tutorial sobre App Service Certificates](/azure/app-service/web-sites-purchase-ssl-web-site).
 
 ### <a name="prerequisites"></a>Prerrequisitos
 
 Para realizar esta solución:
 
-- [Cree una aplicación de App Service](https://docs.microsoft.com/azure/app-service/).
-- [Asigne un nombre DNS personalizado a la aplicación web.](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain)
+- [Cree una aplicación de App Service](/azure/app-service/).
+- [Asigne un nombre DNS personalizado a la aplicación web.](/azure/app-service/app-service-web-tutorial-custom-domain)
 - Adquiera un certificado SSL de una entidad de certificación de confianza y use la clave para firmar la solicitud.
 
 ### <a name="requirements-for-your-ssl-certificate"></a>Requisitos para el certificado SSL
@@ -402,7 +402,7 @@ Para enlazar un certificado SSL personalizado a la aplicación web, su [plan de 
 
     ![Comprobación del plan de tarifa en la aplicación web](media/solution-deployment-guide-geo-distributed/image35.png)
 
-El SSL personalizado no es compatible con los niveles **Gratis** y **Compartido**. Para escalar, siga los pasos de la sección siguiente o, en la página **Elija su plan de tarifa**, vaya directamente a las secciones sobre cómo [cargar y enlazar el certificado SSL](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl).
+El SSL personalizado no es compatible con los niveles **Gratis** y **Compartido**. Para escalar, siga los pasos de la sección siguiente o, en la página **Elija su plan de tarifa**, vaya directamente a las secciones sobre cómo [cargar y enlazar el certificado SSL](/azure/app-service/app-service-web-tutorial-custom-ssl).
 
 #### <a name="scale-up-your-app-service-plan"></a>Escalar verticalmente el plan de App Service
 
@@ -463,7 +463,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
 Cuando se le pida, defina una contraseña de exportación para cargar el certificado SSL a Azure App Service más adelante.
 
-Cuando se usan IIS o **Certreq.exe** para generar la solicitud de certificado, instale el certificado en una máquina local y luego [exporte el certificado a PFX](https://technet.microsoft.com/library/cc754329(v=ws.11).aspx).
+Cuando se usan IIS o **Certreq.exe** para generar la solicitud de certificado, instale el certificado en una máquina local y luego [exporte el certificado a PFX](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754329(v=ws.11)).
 
 #### <a name="upload-the-ssl-certificate"></a>Carga del certificado SSL
 
@@ -508,13 +508,13 @@ Cuando App Service termina de cargar el certificado, este aparece en la sección
 
 #### <a name="remap-the-a-record-for-ip-ssl"></a>Reasignación del registro D en SSL de IP
 
-Si la SSL basada en IP no se usa en la aplicación web, vaya a [Probar HTTPS para el dominio personalizado](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl).
+Si la SSL basada en IP no se usa en la aplicación web, vaya a [Probar HTTPS para el dominio personalizado](/azure/app-service/app-service-web-tutorial-custom-ssl).
 
 De manera predeterminada, la aplicación web usa una dirección IP pública compartida. Cuando se enlaza un certificado con SSL basada en IP, App Service crea otra dirección IP dedicada para la aplicación web.
 
 Cuando un registro D se asigna a la aplicación web, el registro de dominio debe actualizarse con la dirección IP dedicada.
 
-La página **Dominio personalizado** se actualiza con la nueva dirección IP dedicada. Copie esta [dirección IP](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain) y luego reasigne el [registro D](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain) a esta nueva dirección IP.
+La página **Dominio personalizado** se actualiza con la nueva dirección IP dedicada. Copie esta [dirección IP](/azure/app-service/app-service-web-tutorial-custom-domain) y luego reasigne el [registro D](/azure/app-service/app-service-web-tutorial-custom-domain) a esta nueva dirección IP.
 
 #### <a name="test-https"></a>Probar HTTPS
 
@@ -626,4 +626,4 @@ Dirigir el tráfico de datos a través de Azure Traffic Manager y puntos de cone
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Para más información sobre los patrones de nube de Azure, consulte [Patrones de diseño en la nube](https://docs.microsoft.com/azure/architecture/patterns).
+- Para más información sobre los patrones de nube de Azure, consulte [Patrones de diseño en la nube](/azure/architecture/patterns).
