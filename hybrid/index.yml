@@ -10,12 +10,12 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 06/30/2020
-  ms.openlocfilehash: 5e47f05293640339329914a3183fae51649ded4c
-  ms.sourcegitcommit: ad41cc782094d57b506a3a1d98209f6cf94f0f3b
+  ms.openlocfilehash: ab8146340f284af226f336af8fddd2a30977869d
+  ms.sourcegitcommit: 2efdd6422c2af773ad7890dcbc546e816e501c0e
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 07/24/2020
-  ms.locfileid: "87121814"
+  ms.lasthandoff: 07/28/2020
+  ms.locfileid: "87264104"
 highlightedContent:
   items:
   - title: Descubra el nuevo Azure Stack HCI
@@ -178,7 +178,7 @@ conceptualContent:
       text: Azure Sentinel
     - url: /azure/active-directory/devices/concept-azure-ad-join-hybrid
       itemType: overview
-      text: Dispositivos unidos a Azure AD híbrido
+      text: Dispositivos híbridos unidos a Azure AD
   - title: Administración
     links:
     - url: https://azure.microsoft.com/services/azure-arc/hybrid-data-services/
@@ -286,9 +286,11 @@ additionalContent:
     - title: Recursos generales
       links:
       - url: /azure-stack/operator/compare-azure-azure-stack
-        text: Azure Global frente a Azure Stack
+        text: La nube global de Azure frente a Azure Stack
       - url: https://azure.microsoft.com/overview/azure-hybrid/
         text: Funcionalidades del entorno híbrido de Azure
+      - url: https://www.youtube.com/watch?v=to8D7Xl9SU8
+        text: Introducción a las aplicaciones híbridas de Azure Stack
       - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
         text: Casos de clientes de la nube híbrida
       - url: /learn
