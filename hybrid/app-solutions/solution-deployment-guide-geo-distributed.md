@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 741ddf2c3ed234788af359dd233f6a656fbea13c
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 27d07070becfa902a715b451baae7c81c7e4b46f
+ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477361"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88886839"
 ---
 # <a name="direct-traffic-with-a-geo-distributed-app-using-azure-and-azure-stack-hub"></a>Dirigir el tráfico con una aplicación distribuida geográficamente mediante Azure y Azure Stack Hub
 
@@ -84,7 +84,7 @@ Se requieren una suscripción de Azure y la instalación de Azure Stack Hub.
 
 ### <a name="obtain-a-custom-domain-and-configure-dns"></a>Obtención de un dominio personalizado y configuración de DNS
 
-Actualice el archivo de zona DNS para el dominio. Azure AD puede entonces comprobar la propiedad del nombre de dominio personalizado. Use [Azure DNS](/azure/dns/dns-getstarted-portal) para los registros DNS de Azure/Office 365/external dentro de Azure, o bien agregue la entrada DNS a [un registrador DNS diferente](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Actualice el archivo de zona DNS para el dominio. Azure AD puede entonces comprobar la propiedad del nombre de dominio personalizado. Use [Azure DNS](/azure/dns/dns-getstarted-portal) para los registros DNS de Azure/Microsoft 365/externo dentro de Azure, o bien agregue la entrada DNS a [un registrador DNS diferente](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider).
 
 1. Registre un dominio personalizado con un registrador público.
 
@@ -256,7 +256,7 @@ Para completar esta solución:
 
 - Compre un nombre de dominio y asegure el acceso al registro DNS para el proveedor de dominio.
 
-Actualice el archivo de zona DNS para el dominio. Azure AD comprobará la propiedad del nombre de dominio personalizado. Use [Azure DNS](/azure/dns/dns-getstarted-portal) para los registros DNS de Azure/Office 365/external dentro de Azure, o bien agregue la entrada DNS a [un registrador DNS diferente](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Actualice el archivo de zona DNS para el dominio. Azure AD comprobará la propiedad del nombre de dominio personalizado. Use [Azure DNS](/azure/dns/dns-getstarted-portal) para los registros DNS de Azure/Microsoft 365/externo dentro de Azure, o bien agregue la entrada DNS a [un registrador DNS diferente](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider).
 
 - Registre un dominio personalizado con un registrador público.
 
