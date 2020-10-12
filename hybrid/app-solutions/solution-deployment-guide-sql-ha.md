@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 85b859457b9b54a973c5fc23329b927212b60a07
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 2c20d621247ec8e1278feb092586232cc08d5480
+ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477089"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852480"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Implementar un grupo de disponibilidad de SQL Server 2016 en Azure y Azure Stack Hub
 
@@ -106,5 +106,5 @@ Las imágenes de Docker para cada implementación eliminan los problemas de depe
 ## <a name="next-steps"></a>Pasos siguientes
 
 - Use SQL Server Management Studio para conmutar por error el clúster. Consulte [Realización de una conmutación por error manual forzada de un grupo de disponibilidad Always On (SQL Server)](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
-- Más información sobre las aplicaciones en la nube híbrida. Consulte [Soluciones de nube híbrida.](https://aka.ms/azsdevtutorials)
+- Más información sobre las aplicaciones en la nube híbrida. Consulte [Soluciones de nube híbrida.](/azure-stack/user/)
 - Use sus propios datos o modifique el código según este ejemplo en [GitHub](https://github.com/Azure-Samples/azure-intelligent-edge-patterns).
