@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 6de35cb55c4c35a2a9927f9ffc2516ccb00cd89f
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: ecc42a94e2c59531b2a2e933772b0d8ce8c58609
+ms.sourcegitcommit: 0d5b5336bdb969588d0b92e04393e74b8f682c3b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477327"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92353485"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Implementación de una aplicación híbrida con datos locales que se escalan en la nube
 
@@ -37,7 +37,7 @@ En este tutorial se describen las tareas siguientes:
 > - Configuración de la conmutación automática del tráfico entre Azure global y Azure Stack Hub.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagrama de fundamentos de las aplicaciones híbridas](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub es una extensión de Azure. Azure Stack Hub aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
 > En el artículo [Consideraciones de diseño de aplicaciones híbridas](overview-app-design-considerations.md) se examinan los fundamentos de calidad del software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
@@ -72,34 +72,34 @@ Antes de comenzar esta solución, asegúrese de que cumple los requisitos siguie
 
 1. Inicie sesión en el portal de usuarios de Azure Stack Hub.
 
-2. En **Dashboard** (Panel), seleccione **Marketplace**.
+2. En **Dashboard** (Panel), seleccione **Marketplace** .
 
     ![Marketplace de Azure Stack Hub](media/solution-deployment-guide-hybrid/image1.png)
 
-3. En **Marketplace**, seleccione **Compute** (Proceso) y, a continuación, elija **More** (Más). En **Más**, seleccione **Free SQL Server License: SQL Server 2017 Developer en Windows Server**.
+3. En **Marketplace** , seleccione **Compute** (Proceso) y, a continuación, elija **More** (Más). En **Más** , seleccione **Free SQL Server License: SQL Server 2017 Developer en Windows Server** .
 
     ![Seleccione una imagen de máquina virtual en el portal de usuarios de Azure Stack Hub](media/solution-deployment-guide-hybrid/image2.png)
 
-4. En **Free SQL Server License: SQL Server 2017 Developer en Windows Server**, seleccione **Crear**.
+4. En **Free SQL Server License: SQL Server 2017 Developer en Windows Server** , seleccione **Crear** .
 
-5. En **Aspectos básicos > Configurar opciones básicas**, proporcione un **Nombre** para la máquina virtual (VM), un **Nombre de usuario**  para el usuario SA de SQL Server y una **Contraseña** para el usuario SA.  En la lista desplegable **Suscripción**, seleccione la suscripción en la que se va a realizar la implementación. En **Resource group** (Grupo de recursos), use **Choose existing** (Elegir existente) y coloque la máquina virtual en el mismo grupo de recursos que la aplicación web de Azure Stack Hub.
+5. En **Aspectos básicos > Configurar opciones básicas** , proporcione un **Nombre** para la máquina virtual (VM), un **Nombre de usuario**  para el usuario SA de SQL Server y una **Contraseña** para el usuario SA.  En la lista desplegable **Suscripción** , seleccione la suscripción en la que se va a realizar la implementación. En **Resource group** (Grupo de recursos), use **Choose existing** (Elegir existente) y coloque la máquina virtual en el mismo grupo de recursos que la aplicación web de Azure Stack Hub.
 
     ![Configuración de los valores básicos para la máquina virtual en el portal de usuarios de Azure Stack Hub](media/solution-deployment-guide-hybrid/image3.png)
 
 6. En **Size** (Tamaño), elija un tamaño de máquina virtual. Para este tutorial se recomienda A2_Standard o DS2_V2_Standard.
 
-7. En **Configuración > Configurar características opcionales**, configure las siguientes opciones:
+7. En **Configuración > Configurar características opcionales** , configure las siguientes opciones:
 
-   - **Cuenta de almacenamiento**: Si necesita una, cree una nueva cuenta.
-   - **Red virtual**:
+   - **Cuenta de almacenamiento** : Si necesita una, cree una nueva cuenta.
+   - **Red virtual** :
 
      > [!Important]  
      > Asegúrese de que la máquina virtual de SQL Server se implementa en la misma red virtual que las puertas de enlace de VPN.
 
-   - **Dirección IP pública**: Use la configuración predeterminada.
-   - **Grupo de seguridad de red**: (NSG). Cree un nuevo grupo de seguridad de red.
-   - **Extensiones y Supervisión**: Mantenga la configuración predeterminada.
-   - **Cuenta de almacenamiento de diagnóstico**: Si necesita una, cree una nueva cuenta.
+   - **Dirección IP pública** : Use la configuración predeterminada.
+   - **Grupo de seguridad de red** : (NSG). Cree un nuevo grupo de seguridad de red.
+   - **Extensiones y Supervisión** : Mantenga la configuración predeterminada.
+   - **Cuenta de almacenamiento de diagnóstico** : Si necesita una, cree una nueva cuenta.
    - Seleccione **OK** (Aceptar) para guardar la configuración.
 
      ![Configuración de las características opcionales de la máquina virtual en el portal de usuarios de Azure Stack Hub](media/solution-deployment-guide-hybrid/image4.png)
@@ -107,13 +107,13 @@ Antes de comenzar esta solución, asegúrese de que cumple los requisitos siguie
 8. En **SQL Server settings** (Configuración de SQL Server), configure las siguientes opciones:
 
    - En **SQL connectivity** (Conectividad SQL), seleccione **Public (Internet)** (Pública [Internet]).
-   - En **Port** (Puerto), mantenga el valor predeterminado, **1433**.
+   - En **Port** (Puerto), mantenga el valor predeterminado, **1433** .
    - En **SQL authentication** (Autenticación SQL), seleccione **Enable** (Habilitar).
 
      > [!Note]  
-     > Al habilitar la autenticación SQL, se rellena de forma automática con la información de "SQLAdmin" que configuró en **Aspectos básicos**.
+     > Al habilitar la autenticación SQL, se rellena de forma automática con la información de "SQLAdmin" que configuró en **Aspectos básicos** .
 
-   - Para el resto de la configuración, conserve los valores predeterminados. Seleccione **Aceptar**.
+   - Para el resto de la configuración, conserve los valores predeterminados. Seleccione **Aceptar** .
 
      ![Configuración de SQL Server en el portal de usuarios de Azure Stack Hub](media/solution-deployment-guide-hybrid/image5.png)
 
@@ -153,7 +153,7 @@ Para proporcionar conectividad entre el front-end web en Azure y la base de dato
 
 La puerta de enlace de red virtual en el lado de Azure de la red híbrida debe permitir conexiones de punto a sitio para la integración con Azure App Service.
 
-1. En Azure, vaya a la página de la puerta de enlace de red virtual. En **Configuración**, seleccione **Configuración de punto a sitio**.
+1. En Azure Portal, vaya a la página de la puerta de enlace de red virtual. En **Configuración** , seleccione **Configuración de punto a sitio** .
 
     ![Opción de punto a sitio en la puerta de enlace de red virtual de Azure](media/solution-deployment-guide-hybrid/image8.png)
 
@@ -161,12 +161,12 @@ La puerta de enlace de red virtual en el lado de Azure de la red híbrida debe p
 
     ![Iniciar configuración de punto a sitio en la puerta de enlace de red virtual de Azure](media/solution-deployment-guide-hybrid/image9.png)
 
-3. En la página de configuración **De punto a sitio**, escriba el intervalo de direcciones IP privadas que desea usar en **Grupo de direcciones**.
+3. En la página de configuración **De punto a sitio** , escriba el intervalo de direcciones IP privadas que desea usar en **Grupo de direcciones** .
 
    > [!Note]  
    > Asegúrese de que el intervalo que especifique no se superponga con ninguno de los intervalos de direcciones ya utilizados por las subredes de Azure global o los componentes de Azure Stack Hub de la red híbrida.
 
-   En **Tipo de túnel**, desactive la opción **VPN IKEv2**. Seleccione **Guardar** para finalizar la configuración de punto a sitio.
+   En **Tipo de túnel** , desactive la opción **VPN IKEv2** . Seleccione **Guardar** para finalizar la configuración de punto a sitio.
 
    ![Configuración de punto a sitio en la puerta de enlace de red virtual de Azure](media/solution-deployment-guide-hybrid/image10.png)
 
@@ -174,15 +174,15 @@ La puerta de enlace de red virtual en el lado de Azure de la red híbrida debe p
 
 1. Para conectar la aplicación a la red virtual de Azure, siga las instrucciones de [Gateway required VNet integration](/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration) (Integración de VNet requerida de la puerta de enlace).
 
-2. Vaya a **Configuración** en el plan de App Service que hospeda la aplicación web. En **Configuración**, seleccione **Redes**.
+2. Vaya a **Configuración** en el plan de App Service que hospeda la aplicación web. En **Configuración** , seleccione **Redes** .
 
     ![Configurar redes para el plan de App Service](media/solution-deployment-guide-hybrid/image11.png)
 
-3. En **Integración de VNET**, seleccione **Haga clic aquí para administrar**.
+3. En **Integración de VNET** , seleccione **Haga clic aquí para administrar** .
 
     ![Administración de la integración de red virtual para el plan de App Service](media/solution-deployment-guide-hybrid/image12.png)
 
-4. Seleccione la red virtual que desea configurar. En **DIRECCIONES IP ENRUTADAS A RED VIRTUAL**, escriba el intervalo de direcciones IP de la red virtual de Azure, la red virtual de Azure Stack Hub y los espacios de direcciones de punto a sitio. Seleccione **Guardar** para validar y guardar la configuración.
+4. Seleccione la red virtual que desea configurar. En **DIRECCIONES IP ENRUTADAS A RED VIRTUAL** , escriba el intervalo de direcciones IP de la red virtual de Azure, la red virtual de Azure Stack Hub y los espacios de direcciones de punto a sitio. Seleccione **Guardar** para validar y guardar la configuración.
 
     ![Intervalos de direcciones IP que se enrutan en la integración de la red virtual](media/solution-deployment-guide-hybrid/image13.png)
 
@@ -192,11 +192,11 @@ Para más información acerca de cómo se integra App Service con las redes virt
 
 La puerta de enlace de red local de la red virtual de Azure Stack Hub debe estar configurada para enrutar el tráfico desde el intervalo de direcciones de punto a sitio de App Service.
 
-1. En Azure Stack Hub, vaya a **Local network gateway** (Puerta de enlace de red local). En **Settings** (Configuración), seleccione **Configuration** (Configuración).
+1. En el portal de Azure Stack Hub, vaya a **Puerta de enlace de red local** . En **Settings** (Configuración), seleccione **Configuration** (Configuración).
 
     ![Opción de configuración de puerta de enlace en la puerta de enlace de red local de Azure Stack Hub](media/solution-deployment-guide-hybrid/image14.png)
 
-2. En **Espacio de direcciones**, escriba el intervalo de direcciones de punto a sitio para la puerta de enlace de red virtual de Azure.
+2. En **Espacio de direcciones** , escriba el intervalo de direcciones de punto a sitio para la puerta de enlace de red virtual de Azure.
 
     ![Espacio de direcciones de punto a sitio en la puerta de enlace de red local de Azure Stack Hub](media/solution-deployment-guide-hybrid/image15.png)
 
@@ -212,9 +212,9 @@ En este tutorial, se usa Azure DNS para administrar el DNS porque los dominios d
 
 Dado que Traffic Manager se basa en registros CNAME de DNS, se necesita un subdominio para enrutar correctamente el tráfico a los puntos de conexión. Para más información acerca de la asignación de dominios y registros DNS, consulte [Asignación de dominios con Traffic Manager](/azure/app-service/web-sites-traffic-manager-custom-domain-name).
 
-Para el punto de conexión de Azure, creará un subdominio que los usuarios pueden utilizar para acceder a la aplicación web. Para este tutorial, puede usar **app.northwind.com**, pero este valor se debe personalizar en función de su propio dominio.
+Para el punto de conexión de Azure, creará un subdominio que los usuarios pueden utilizar para acceder a la aplicación web. Para este tutorial, puede usar **app.northwind.com** , pero este valor se debe personalizar en función de su propio dominio.
 
-También deberá crear un subdominio con un registro A para el punto de conexión de Azure Stack Hub. Puede usar **azurestack.northwind.com**.
+También deberá crear un subdominio con un registro A para el punto de conexión de Azure Stack Hub. Puede usar **azurestack.northwind.com** .
 
 ### <a name="configure-a-custom-domain-in-azure"></a>Configuración de un dominio personalizado en Azure
 
@@ -238,13 +238,13 @@ Para agregar SSL en Azure:
 
 1. Asegúrese de que el certificado SSL que obtiene es válido para el subdominio que ha creado. (Es correcto usar certificados con caracteres comodín).
 
-2. En Azure, siga las instrucciones de las secciones **Preparación de la aplicación web** y **Enlace del certificado SSL** del artículo [Enlace de un certificado SSL personalizado existente con Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl). Seleccione **SSL basado en SNI** como el **Tipo de SSL**.
+2. En Azure Portal, siga las instrucciones de las secciones **Preparar la aplicación web** y **Enlace su certificado SSL** del artículo en el que se explica cómo[enlazar un certificado SSL personalizado existente con Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl). Seleccione **SSL basado en SNI** como el **Tipo de SSL** .
 
 3. Redirija todo el tráfico al puerto HTTPS. Siga las instrucciones de la sección **Aplicación de HTTPS** del artículo [Enlace de un certificado SSL personalizado existente con Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl).
 
 Para agregar SSL a Azure Stack Hub:
 
-1. Repita los pasos 1 a 3 que usó para Azure.
+1. Repita los pasos 1-3 que usó para Azure, pero ahora use el portal de Azure Stack Hub.
 
 ## <a name="configure-and-deploy-the-web-app"></a>Configurar e implementar la aplicación web
 
@@ -274,7 +274,7 @@ Puede usar variables de entorno de App Service para pasar una cadena de conexió
         options.UseSqlite("Data Source=localdatabase.db"));
     ```
 
-3. Reemplace el bloque de código anterior por el código siguiente, que usa una cadena de conexión definida en el archivo *appsettings.json*:
+3. Reemplace el bloque de código anterior por el código siguiente, que usa una cadena de conexión definida en el archivo *appsettings.json* :
 
     ```C#
     services.AddDbContext<MyDatabaseContext>(options =>
@@ -300,46 +300,46 @@ Cuando se crea la aplicación web en un entorno de App Service, esta se inicia c
 
 ### <a name="enable-automatic-scale-out"></a>Habilitación de la escalabilidad horizontal automática
 
-1. En Azure, busque el plan de App Service para los sitios que desea escalar horizontalmente y, a continuación, seleccione **Escalar horizontalmente (plan de App Service)** .
+1. En Azure Portal, busque el plan de App Service de los sitios que desea escalar horizontalmente y, después, seleccione **Escalar horizontalmente (plan de App Service)** .
 
     ![Escalar horizontalmente Azure App Service](media/solution-deployment-guide-hybrid/image16.png)
 
-2. Seleccione **Habilitar escalado automático**.
+2. Seleccione **Habilitar escalado automático** .
 
     ![Habilitar la escalabilidad automática en Azure App Service](media/solution-deployment-guide-hybrid/image17.png)
 
-3. Escriba un nombre para **Nombre de la configuración de escalado automático**. Para la regla de escalado automático **Predeterminada**, seleccione **Escalado basado en una métrica**. Establezca el valor de **Límites de instancia** en **Mínimo: 1**, **Máximo: 10** y **Predeterminado: 1**.
+3. Escriba un nombre para **Nombre de la configuración de escalado automático** . Para la regla de escalado automático **Predeterminada** , seleccione **Escalado basado en una métrica** . Establezca el valor de **Límites de instancia** en **Mínimo: 1** , **Máximo: 10** y **Predeterminado: 1** .
 
     ![Configurar la escalabilidad automática en Azure App Service](media/solution-deployment-guide-hybrid/image18.png)
 
-4. Seleccione **+Agregar una regla**.
+4. Seleccione **+Agregar una regla** .
 
-5. En **Origen de métrica**, seleccione **Recurso actual**. Utilice los siguientes criterios y acciones para la regla.
+5. En **Origen de métrica** , seleccione **Recurso actual** . Utilice los siguientes criterios y acciones para la regla.
 
 #### <a name="criteria"></a>Criterios
 
-1. En **Agregación de tiempo**, seleccione **Media**.
+1. En **Agregación de tiempo** , seleccione **Media** .
 
-2. En **Nombre de métrica**, seleccione **Porcentaje de CPU**.
+2. En **Nombre de métrica** , seleccione **Porcentaje de CPU** .
 
-3. En **Operador**, seleccione **Mayor que**.
+3. En **Operador** , seleccione **Mayor que** .
 
-   - Establezca **Umbral** en **50**.
-   - Establezca **Duración** en **10**.
+   - Establezca **Umbral** en **50** .
+   - Establezca **Duración** en **10** .
 
 #### <a name="action"></a>Acción
 
-1. En **Operación**, seleccione **Aumentar recuento en**.
+1. En **Operación** , seleccione **Aumentar recuento en** .
 
-2. Establezca **Recuento de instancias** en **2**.
+2. Establezca **Recuento de instancias** en **2** .
 
-3. Establezca **Tiempo de finalización** en **5**.
+3. Establezca **Tiempo de finalización** en **5** .
 
-4. Seleccione **Agregar**.
+4. Seleccione **Agregar** .
 
-5. Seleccione **+Agregar una regla**.
+5. Seleccione **+Agregar una regla** .
 
-6. En **Origen de métrica**, seleccione **Recurso actual**.
+6. En **Origen de métrica** , seleccione **Recurso actual** .
 
    > [!Note]  
    > El recurso actual contendrá el nombre o el identificador único del plan de App Service y las listas desplegables **Tipo de recurso** y **Recurso** no estarán disponibles.
@@ -348,45 +348,45 @@ Cuando se crea la aplicación web en un entorno de App Service, esta se inicia c
 
 Cuando el tráfico disminuye, la aplicación web de Azure puede reducir automáticamente el número de instancias activas para reducir los costos. Esta acción es menos agresiva que la escalabilidad horizontal y reduce el impacto sobre los usuarios de la aplicación.
 
-1. Vaya a la condición del escalado horizontal **Predeterminada** y seleccione **+ Agregar una regla**. Utilice los siguientes criterios y acciones para la regla.
+1. Vaya a la condición del escalado horizontal **Predeterminada** y seleccione **+ Agregar una regla** . Utilice los siguientes criterios y acciones para la regla.
 
 #### <a name="criteria"></a>Criterios
 
-1. En **Agregación de tiempo**, seleccione **Media**.
+1. En **Agregación de tiempo** , seleccione **Media** .
 
-2. En **Nombre de métrica**, seleccione **Porcentaje de CPU**.
+2. En **Nombre de métrica** , seleccione **Porcentaje de CPU** .
 
-3. En **Operador**, seleccione **Menor que**.
+3. En **Operador** , seleccione **Menor que** .
 
-   - Establezca **Umbral** en **30**.
-   - Establezca **Duración** en **10**.
+   - Establezca **Umbral** en **30** .
+   - Establezca **Duración** en **10** .
 
 #### <a name="action"></a>Acción
 
-1. En **Operación**, seleccione **Reducir recuento en**.
+1. En **Operación** , seleccione **Reducir recuento en** .
 
-   - Establezca **Recuento de instancias** en **1**.
-   - Establezca **Tiempo de finalización** en **5**.
+   - Establezca **Recuento de instancias** en **1** .
+   - Establezca **Tiempo de finalización** en **5** .
 
-2. Seleccione **Agregar**.
+2. Seleccione **Agregar** .
 
 ## <a name="create-a-traffic-manager-profile-and-configure-cross-cloud-scaling"></a>Creación de un perfil de Traffic Manager y configuración del escalado entre nubes
 
-Cree un perfil de Traffic Manager en Azure y, a continuación, configure puntos de conexión para habilitar el escalado entre nubes.
+Cree un perfil de Traffic Manager desde Azure Portal y, después, configure puntos de conexión para habilitar el escalado entre nubes.
 
 ### <a name="create-traffic-manager-profile"></a>Creación de un perfil de Traffic Manager
 
-1. Seleccione **Crear un recurso**.
-2. Seleccionar **Redes**.
+1. Seleccione **Crear un recurso** .
+2. Seleccionar **Redes** .
 3. Seleccione **Perfil de Traffic Manager** y configure las opciones siguientes:
 
-   - En **Nombre**, escriba un nombre para el perfil. Este nombre **debe** ser único en la zona trafficmanager.net y se utiliza para crear un nuevo nombre de DNS (por ejemplo, northwindstore.trafficmanager.net).
-   - En **Método de enrutamiento**, seleccione **Ponderado**.
-   - En **Suscripción**, seleccione la suscripción en la que desea crear este perfil.
-   - En **Grupo de recursos**, cree un grupo de recursos nuevo para este perfil.
-   - En **Ubicación del grupo de recursos**, seleccione la ubicación del grupo de recursos. Este valor hace referencia a la ubicación del grupo de recursos y no tiene efecto alguno sobre el perfil de Traffic Manager que se implementa globalmente.
+   - En **Nombre** , escriba un nombre para el perfil. Este nombre **debe** ser único en la zona trafficmanager.net y se utiliza para crear un nuevo nombre de DNS (por ejemplo, northwindstore.trafficmanager.net).
+   - En **Método de enrutamiento** , seleccione **Ponderado** .
+   - En **Suscripción** , seleccione la suscripción en la que desea crear este perfil.
+   - En **Grupo de recursos** , cree un grupo de recursos nuevo para este perfil.
+   - En **Ubicación del grupo de recursos** , seleccione la ubicación del grupo de recursos. Este valor hace referencia a la ubicación del grupo de recursos y no tiene efecto alguno sobre el perfil de Traffic Manager que se implementa globalmente.
 
-4. Seleccione **Crear**.
+4. Seleccione **Crear** .
 
     ![Creación de un perfil de Traffic Manager](media/solution-deployment-guide-hybrid/image19.png)
 
@@ -396,49 +396,49 @@ Cree un perfil de Traffic Manager en Azure y, a continuación, configure puntos 
 
 1. Busque el perfil de Traffic Manager que creó. Si estaba en el grupo de recursos del perfil, seleccione el perfil.
 
-2. En **Perfil de Traffic Manager**, en **Configuración**, seleccione **Puntos de conexión**.
+2. En **Perfil de Traffic Manager** , en **Configuración** , seleccione **Puntos de conexión** .
 
-3. Seleccione **Agregar**.
+3. Seleccione **Agregar** .
 
-4. En **Agregar punto de conexión**, use la siguiente configuración para Azure Stack Hub:
+4. En **Agregar punto de conexión** , use la siguiente configuración para Azure Stack Hub:
 
-   - En **Tipo**, seleccione **Punto de conexión externo**.
+   - En **Tipo** , seleccione **Punto de conexión externo** .
    - Escriba el **Nombre** del punto de conexión.
-   - En **Nombre de dominio completo (FQDN) o dirección IP**, escriba la dirección URL externa de la aplicación web de Azure Stack Hub.
-   - En **Peso**, mantenga el valor predeterminado, **1**. Este peso hace que todo el tráfico vaya a este punto de conexión si funciona correctamente.
-   - No active la opción **Agregar como deshabilitado**.
+   - En **Nombre de dominio completo (FQDN) o dirección IP** , escriba la dirección URL externa de la aplicación web de Azure Stack Hub.
+   - En **Peso** , mantenga el valor predeterminado, **1** . Este peso hace que todo el tráfico vaya a este punto de conexión si funciona correctamente.
+   - No active la opción **Agregar como deshabilitado** .
 
 5. Seleccione **Aceptar** para guardar el punto de conexión de Azure Stack Hub.
 
 A continuación, configurará el punto de conexión de Azure.
 
-1. En **Perfil de Traffic Manager**, seleccione **Puntos de conexión**.
-2. Seleccione **+Agregar**.
-3. En **Agregar punto de conexión**, utilice la siguiente configuración para Azure:
+1. En **Perfil de Traffic Manager** , seleccione **Puntos de conexión** .
+2. Seleccione **+Agregar** .
+3. En **Agregar punto de conexión** , utilice la siguiente configuración para Azure:
 
-   - En **Tipo**, seleccione **Punto de conexión de Azure**.
+   - En **Tipo** , seleccione **Punto de conexión de Azure** .
    - Escriba el **Nombre** del punto de conexión.
-   - En **Tipo de recurso de destino**, seleccione **App Service**.
-   - En **Recurso de destino**, seleccione **Elegir un servicio de aplicaciones** para mostrar la lista de Web Apps en la misma suscripción.
-   - En **Recursos**, elija el servicio de aplicación que quiere agregar como el primer punto de conexión.
-   - En **Peso**, seleccione **2**. Esta opción hace que todo el tráfico vaya a este punto de conexión si el punto de conexión principal está en mal estado o si tiene una regla o alerta que redirige el tráfico cuando se desencadena.
-   - No active la opción **Agregar como deshabilitado**.
+   - En **Tipo de recurso de destino** , seleccione **App Service** .
+   - En **Recurso de destino** , seleccione **Elegir un servicio de aplicaciones** para mostrar la lista de Web Apps en la misma suscripción.
+   - En **Recursos** , elija el servicio de aplicación que quiere agregar como el primer punto de conexión.
+   - En **Peso** , seleccione **2** . Esta opción hace que todo el tráfico vaya a este punto de conexión si el punto de conexión principal está en mal estado o si tiene una regla o alerta que redirige el tráfico cuando se desencadena.
+   - No active la opción **Agregar como deshabilitado** .
 
 4. Seleccione **Aceptar** para guardar el punto de conexión de Azure.
 
-Después de que ambos puntos de conexión están configurados, aparecerán en el **Perfil de Traffic Manager** al seleccionar **Puntos de conexión**. El ejemplo de la captura de pantalla siguiente muestra dos puntos de conexión con la información de estado y configuración de cada uno de ellos.
+Después de que ambos puntos de conexión están configurados, aparecerán en el **Perfil de Traffic Manager** al seleccionar **Puntos de conexión** . El ejemplo de la captura de pantalla siguiente muestra dos puntos de conexión con la información de estado y configuración de cada uno de ellos.
 
 ![Puntos de conexión del perfil de Traffic Manager](media/solution-deployment-guide-hybrid/image20.png)
 
-## <a name="set-up-application-insights-monitoring-and-alerting"></a>Configuración de la supervisión y las alertas de Application Insights
+## <a name="set-up-application-insights-monitoring-and-alerting-in-azure"></a>Configuración de la supervisión y generación de alertas de Application Insights en Azure
 
 Azure Application Insights permite supervisar la aplicación y enviar alertas basadas en las condiciones que configure. Algunos ejemplos son: la aplicación no está disponible, experimenta errores o muestra problemas de rendimiento.
 
-Usará las métricas de Application Insights para crear alertas. Cuando se desencadenen estas alertas, la instancia de la aplicación web cambiará automáticamente de Azure Stack Hub a Azure para escalarse horizontalmente y volverá a Azure Stack Hub para reducirse horizontalmente.
+Para crear alertas, usará las métricas de Azure Application Insights. Cuando se desencadenen estas alertas, la instancia de la aplicación web cambiará automáticamente de Azure Stack Hub a Azure para escalarse horizontalmente y volverá a Azure Stack Hub para reducirse horizontalmente.
 
 ### <a name="create-an-alert-from-metrics"></a>Creación de una alerta a partir de métricas
 
-Vaya al grupo de recursos de este tutorial y seleccione la instancia de Application Insights para abrir **Application Insights**.
+En Azure Portal, vaya al grupo de recursos de este tutorial y seleccione la instancia de Application Insights para abrir **Application Insights** .
 
 ![Application Insights](media/solution-deployment-guide-hybrid/image21.png)
 
@@ -446,45 +446,45 @@ Esta vista se usará para crear una alerta de escalabilidad horizontal y una ale
 
 ### <a name="create-the-scale-out-alert"></a>Creación de la alerta de escalabilidad horizontal
 
-1. En **Configurar**, seleccione **Alertas (clásica)** .
+1. En **Configurar** , seleccione **Alertas (clásica)** .
 2. Seleccione **Agregar una alerta de métrica (clásica)** .
-3. En **Agregar regla**, configure las opciones siguientes:
+3. En **Agregar regla** , configure las opciones siguientes:
 
-   - En **Nombre**, escriba **Burst into Azure Cloud**.
+   - En **Nombre** , escriba **Burst into Azure Cloud** .
    - La **Descripción** es opcional.
-   - En **Origen** > **Alerta sobre**, seleccione **Métricas**.
-   - En **Criterios**, seleccione la suscripción, el grupo de recursos del perfil de Traffic Manager y el nombre del perfil de Traffic Manager para el recurso.
+   - En **Origen** > **Alerta sobre** , seleccione **Métricas** .
+   - En **Criterios** , seleccione la suscripción, el grupo de recursos del perfil de Traffic Manager y el nombre del perfil de Traffic Manager para el recurso.
 
-4. En **Métrica**, seleccione **Velocidad de solicitudes de**.
-5. En **Condición**, seleccione **Mayor que**.
-6. En **Umbral**, escriba **2**.
-7. En **Período**, seleccione **En los últimos 5 minutos**.
-8. En **Notificar mediante**:
-   - Active la casilla de verificación para **Correo electrónico a propietarios, colaboradores y lectores**.
-   - En **Correos electrónicos adicionales del administrador**, escriba su dirección de correo electrónico.
+4. En **Métrica** , seleccione **Velocidad de solicitudes de** .
+5. En **Condición** , seleccione **Mayor que** .
+6. En **Umbral** , escriba **2** .
+7. En **Período** , seleccione **En los últimos 5 minutos** .
+8. En **Notificar mediante** :
+   - Active la casilla de verificación para **Correo electrónico a propietarios, colaboradores y lectores** .
+   - En **Correos electrónicos adicionales del administrador** , escriba su dirección de correo electrónico.
 
-9. En la barra de menús, seleccione **Guardar**.
+9. En la barra de menús, seleccione **Guardar** .
 
 ### <a name="create-the-scale-in-alert"></a>Creación de la alerta de reducción horizontal
 
-1. En **Configurar**, seleccione **Alertas (clásica)** .
+1. En **Configurar** , seleccione **Alertas (clásica)** .
 2. Seleccione **Agregar una alerta de métrica (clásica)** .
-3. En **Agregar regla**, configure las opciones siguientes:
+3. En **Agregar regla** , configure las opciones siguientes:
 
-   - En **Nombre**, escriba **Scale back into Azure Stack Hub**.
+   - En **Nombre** , escriba **Scale back into Azure Stack Hub** .
    - La **Descripción** es opcional.
-   - En **Origen** > **Alerta sobre**, seleccione **Métricas**.
-   - En **Criterios**, seleccione la suscripción, el grupo de recursos del perfil de Traffic Manager y el nombre del perfil de Traffic Manager para el recurso.
+   - En **Origen** > **Alerta sobre** , seleccione **Métricas** .
+   - En **Criterios** , seleccione la suscripción, el grupo de recursos del perfil de Traffic Manager y el nombre del perfil de Traffic Manager para el recurso.
 
-4. En **Métrica**, seleccione **Velocidad de solicitudes de**.
-5. En **Condición**, seleccione **Menor que**.
-6. En **Umbral**, escriba **2**.
-7. En **Período**, seleccione **En los últimos 5 minutos**.
-8. En **Notificar mediante**:
-   - Active la casilla de verificación para **Correo electrónico a propietarios, colaboradores y lectores**.
-   - En **Correos electrónicos adicionales del administrador**, escriba su dirección de correo electrónico.
+4. En **Métrica** , seleccione **Velocidad de solicitudes de** .
+5. En **Condición** , seleccione **Menor que** .
+6. En **Umbral** , escriba **2** .
+7. En **Período** , seleccione **En los últimos 5 minutos** .
+8. En **Notificar mediante** :
+   - Active la casilla de verificación para **Correo electrónico a propietarios, colaboradores y lectores** .
+   - En **Correos electrónicos adicionales del administrador** , escriba su dirección de correo electrónico.
 
-9. En la barra de menús, seleccione **Guardar**.
+9. En la barra de menús, seleccione **Guardar** .
 
 En la captura de pantalla siguiente se muestran las alertas de escalabilidad horizontal y reducción horizontal.
 
@@ -502,14 +502,14 @@ Cuando el sitio web llegue a los umbrales que configuró, recibirá una alerta. 
 
     ![Puntos de conexión de Traffic Manager en Azure Portal](media/solution-deployment-guide-hybrid/image20.png)
 
-2. Seleccione **Puntos de conexión**.
-3. Seleccione el **punto de conexión de Azure**.
-4. En **Estado**, seleccione **Habilitado** y, a continuación, seleccione **Guardar**.
+2. Seleccione **Puntos de conexión** .
+3. Seleccione el **punto de conexión de Azure** .
+4. En **Estado** , seleccione **Habilitado** y, a continuación, seleccione **Guardar** .
 
     ![Habilitar punto de conexión de Azure en Azure Portal](media/solution-deployment-guide-hybrid/image23.png)
 
-5. En **Puntos de conexión** del perfil de Traffic Manager, seleccione **Punto de conexión externo**.
-6. En **Estado**, seleccione **Deshabilitado** y, a continuación, seleccione **Guardar**.
+5. En **Puntos de conexión** del perfil de Traffic Manager, seleccione **Punto de conexión externo** .
+6. En **Estado** , seleccione **Deshabilitado** y, a continuación, seleccione **Guardar** .
 
     ![Deshabilitar punto de conexión de Azure Stack Hub en Azure Portal](media/solution-deployment-guide-hybrid/image24.png)
 
