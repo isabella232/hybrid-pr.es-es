@@ -1,8 +1,8 @@
-- name: Documentación sobre la ventajas híbrida de Azure
+- name: Documentación de soluciones híbridas y de multinube
   href: index.yml
 - name: Información general
   items:
-    - name: Ejemplos de soluciones y patrones híbridos
+    - name: Ejemplos de soluciones y patrones
       href: overview-patterns-solution-examples.md
 - name: Patrones
   items:
@@ -58,7 +58,7 @@
       href: 'https://aka.ms/edgetrainingdeploy'
 - name: Conceptos
   items:
-    - name: Consideraciones de diseño de aplicaciones híbridas
+    - name: Consideraciones sobre el diseño de aplicaciones
       href: overview-app-design-considerations.md
 - name: Temas relacionados
   items:
