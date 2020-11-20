@@ -1,32 +1,32 @@
 ### YamlMime:Landing
-title: Documentación sobre soluciones y patrones híbridos de Azure
-summary: Aprenda a utilizar ejemplos de soluciones y patrones híbridos en el desarrollo de la aplicación. Azure y Azure Stack permiten el desarrollo de aplicaciones híbridas basadas en un conjunto de servicios de nube inteligente y de inteligencia perimetral.
+title: Documentación de soluciones híbridas y de multinube de Azure
+summary: Aprenda a aprovechar los ejemplos de soluciones y patrones híbridos y multinube en el desarrollo de aplicaciones, basado en un conjunto de servicios de nube inteligente y de perímetro inteligente.
 metadata:
-  title: Documentación sobre soluciones y patrones híbridos de Azure
-  description: Aprenda a utilizar ejemplos de soluciones y patrones híbridos en el desarrollo de la aplicación. Azure y Azure Stack permiten el desarrollo de aplicaciones híbridas basadas en un conjunto de servicios de nube inteligente y de inteligencia perimetral.
+  title: Documentación de soluciones híbridas y de multinube de Azure
+  description: Aprenda a aprovechar los ejemplos de soluciones y patrones híbridos y multinube en el desarrollo de aplicaciones, basado en un conjunto de servicios de nube inteligente y de perímetro inteligente.
   ms.service: azure-stack
   ms.topic: landing-page
   author: BryanLa
   ms.author: bryanla
   ms.date: 10/31/2019
-  ms.openlocfilehash: 923e8aa2af78b5d23ba1f25d8b0eb5b80edc4f0a
-  ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+  ms.openlocfilehash: f51256c555011744f847e457b8bac46a1b5c4b14
+  ms.sourcegitcommit: 40117c1f26640d276fcdb9c760bb4e508c0c6003
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 06/17/2020
-  ms.locfileid: "84909764"
+  ms.lasthandoff: 11/18/2020
+  ms.locfileid: "94872992"
 landingContent:
-- title: Acerca de las soluciones y patrones híbridos
+- title: Acerca de las soluciones y los patrones híbridas y multinube
   linkLists:
   - linkListType: overview
     links:
-    - text: ¿Qué son los ejemplos de soluciones y patrones híbridos?
+    - text: ¿Qué son los ejemplos de soluciones y patrones?
       url: overview-patterns-solution-examples.md
   - linkListType: concept
     links:
-    - text: Consideraciones de diseño de aplicaciones híbridas
+    - text: Consideraciones sobre el diseño de aplicaciones
       url: overview-app-design-considerations.md
-- title: Exploración de patrones híbridos
+- title: Exploración de patrones híbridos y multinube
   linkLists:
   - linkListType: architecture
     links:
@@ -38,7 +38,7 @@ landingContent:
       url: pattern-retail-footfall-detection.md
     - text: Aplicación distribuida geográficamente
       url: pattern-geo-distributed.md
-- title: Implementación de ejemplos de soluciones híbridas
+- title: Implementación de ejemplos de soluciones híbridas y multinube
   linkLists:
   - linkListType: tutorial
     links:
