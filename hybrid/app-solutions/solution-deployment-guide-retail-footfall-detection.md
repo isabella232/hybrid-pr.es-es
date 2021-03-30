@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2177b32474dea695967e197acbd4bc1e18422d7b
-ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
+ms.openlocfilehash: caedbd4758b9ae8c93cf9bb625ed9aac68bfa196
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96901497"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895378"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Implementación de una solución de detección de afluencia de público basada en IA con Azure y Azure Stack Hub
 
@@ -29,7 +29,7 @@ En esta solución, aprenderá cómo:
 > ![Diagrama de fundamentos de las aplicaciones híbridas](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub es una extensión de Azure. Azure Stack Hub aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
-> En el artículo [Consideraciones de diseño de aplicaciones híbridas](overview-app-design-considerations.md) se examinan los pilares de la calidad del software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
+> En el artículo [Consideraciones de diseño de aplicaciones híbridas](overview-app-design-considerations.md) se examinan los fundamentos de calidad del software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 ## <a name="prerequisites"></a>Prerrequisitos
 
@@ -37,22 +37,22 @@ Antes de empezar a usar esta guía de implementación, asegúrese de:
 
 - Consultar el tema [Patrón de detección de afluencia de compradores](pattern-retail-footfall-detection.md).
 - Obtener acceso de usuario a un Kit de desarrollo de Azure Stack (ASDK) o una instancia de sistema integrada de Azure Stack Hub con:
-  - [Azure App Service en el proveedor de recursos de Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-overview.md) instalado. Necesita acceso de operador a la instancia de Azure Stack Hub o trabajar con su administrador para realizar la instalación.
+  - [Azure App Service en el proveedor de recursos de Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-overview) instalado. Necesita acceso de operador a la instancia de Azure Stack Hub o trabajar con su administrador para realizar la instalación.
   - Una suscripción a una oferta que proporcione App Service y la cuota de Storage. Necesita acceso de operador para crear una oferta.
 - Obtener acceso a una suscripción de Azure.
   - Si no tiene ninguna suscripción de Azure, regístrese para una [cuenta de evaluación gratuita](https://azure.microsoft.com/free/) antes de empezar.
 - Crear dos entidades de servicio en el directorio:
   - Una configurada para usarla con recursos de Azure, con acceso en el ámbito de la suscripción de Azure.
   - Otra configurada para usarla con recursos de Azure Stack Hub, con acceso en el ámbito de la suscripción de Azure Stack Hub.
-  - Para más información sobre la creación de entidades de servicio y la autorización de acceso, consulte [Uso de una identidad de aplicación para acceder a recursos](/azure-stack/operator/azure-stack-create-service-principals.md). Si prefiere usar la CLI de Azure, vea [Creación de una entidad de servicio de Azure con la CLI de Azure](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true).
+  - Para más información sobre la creación de entidades de servicio y la autorización de acceso, consulte [Uso de una identidad de aplicación para acceder a recursos](/azure-stack/operator/azure-stack-create-service-principals). Si prefiere usar la CLI de Azure, vea [Creación de una entidad de servicio de Azure con la CLI de Azure](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true).
 - Implemente Azure Cognitive Services en Azure o Azure Stack Hub.
   - En primer lugar [obtenga más información sobre Cognitive Services](https://azure.microsoft.com/services/cognitive-services/).
-  - Luego, visite [Implementación de Azure Cognitive Services en Azure Stack](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) para implementar Cognitive Services en Azure Stack Hub. Primero debe registrarse para acceder a la versión preliminar.
+  - Luego, visite [Implementación de Azure Cognitive Services en Azure Stack](/azure-stack/user/azure-stack-solution-template-cognitive-services) para implementar Cognitive Services en Azure Stack Hub. Primero debe registrarse para acceder a la versión preliminar.
 - Clonar o descargar un kit de desarrollo de IA de Azure Custom Vision. Para detalles, consulte el [kit de desarrollo de IA de Vision](https://azure.github.io/Vision-AI-DevKit-Pages/).
 - Registrarse para obtener una cuenta de Power BI.
 - Una clave de suscripción de Face API de Azure Cognitive Services y una dirección URL de punto de conexión. Puede obtener ambas con la evaluación gratuita de [Pruebe Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). O bien, siga las instrucciones de [Creación de un recurso de Cognitive Services con Azure Portal](/azure/cognitive-services/cognitive-services-apis-create-account).
 - Instalar los siguientes recursos de desarrollo:
-  - [CLI de Azure 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2.md)
+  - [CLI de Azure 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2)
   - [Docker CE](https://hub.docker.com/search/?type=edition&offering=community)
   - [Porter](https://porter.sh/). Use Porter para implementar aplicaciones en la nube mediante los manifiestos del conjunto de CNAB que se proporcionan.
   - [Visual Studio Code](https://code.visualstudio.com/)

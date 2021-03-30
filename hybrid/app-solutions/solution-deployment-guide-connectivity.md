@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 16c5d7820e8c865a9f88cb00da5cc7c854379414
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 4480f51b03082f2a0cbb7f2f213e05b7bf488646
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477293"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895386"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Configuración de la conectividad de nube híbrida con Azure y Azure Stack Hub
 
@@ -25,7 +25,7 @@ En esta solución, creará un entorno de ejemplo para:
 > - Mantener un sistema heredado mientras se usan recursos e implementaciones de aplicaciones escaladas en la nube en Azure global.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagrama de fundamentos de las aplicaciones híbridas](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub es una extensión de Azure. Azure Stack Hub aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
 > En el artículo [Consideraciones de diseño de aplicaciones híbridas](overview-app-design-considerations.md) se examinan los fundamentos de calidad del software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
@@ -37,7 +37,7 @@ Se requieren algunos componentes para crear una implementación de conectividad 
 ### <a name="azure"></a>Azure
 
 - Si no tiene una suscripción a Azure, cree una [cuenta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de empezar.
-- Cree una [aplicación web](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts&view=vsts) en Azure. Tome nota de la dirección URL de la aplicación web, ya que la necesitará en la solución.
+- Cree una [aplicación web](/aspnet/core/tutorials/publish-to-azure-webapp-using-vs) en Azure. Tome nota de la dirección URL de la aplicación web, ya que la necesitará en la solución.
 
 ### <a name="azure-stack-hub"></a>Azure Stack Hub
 
@@ -47,9 +47,9 @@ Un asociado de hardware u OEM de Azure puede implementar una instancia de Azure 
    >[!Note]
    >La implementación del ASDK puede tardar hasta 7 horas, así que planéela en consecuencia.
 
-- Implemente los servicios PaaS de [App Service](/azure-stack/operator/azure-stack-app-service-deploy.md) en Azure Stack Hub.
-- [Cree planes y ofertas](/azure-stack/operator/service-plan-offer-subscription-overview.md) en el entorno de Azure Stack Hub.
-- [Cree una suscripción de inquilino](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm.md) dentro del entorno de Azure Stack Hub.
+- Implemente los servicios PaaS de [App Service](/azure-stack/operator/azure-stack-app-service-deploy) en Azure Stack Hub.
+- [Cree planes y ofertas](/azure-stack/operator/service-plan-offer-subscription-overview) en el entorno de Azure Stack Hub.
+- [Cree una suscripción de inquilino](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm) dentro del entorno de Azure Stack Hub.
 
 ### <a name="azure-stack-hub-components"></a>Componentes de Azure Stack Hub
 
@@ -58,7 +58,7 @@ Un operador de Azure Stack Hub debe implementar la instancia de App Service, cre
 En esta solución de ejemplo se da por supuesto que tiene algunos conocimientos básicos de Azure y Azure Stack Hub. Para más información antes de iniciar la solución, lea los siguientes artículos:
 
 - [Introducción a Azure](https://azure.microsoft.com/overview/what-is-azure/)
-- [Conceptos clave de Azure Stack Hub](/azure-stack/operator/azure-stack-overview.md)
+- [Conceptos clave de Azure Stack Hub](/azure-stack/operator/azure-stack-overview)
 
 ### <a name="before-you-begin"></a>Antes de empezar
 

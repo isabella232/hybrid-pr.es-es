@@ -7,12 +7,12 @@ ms.date: 10/31/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 10/31/2019
-ms.openlocfilehash: 0bf07bb38537f530a0adb3569c43d53af13b8d56
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
-ms.translationtype: MT
+ms.openlocfilehash: 866557ec3af2337e9f034da84cf417675508563b
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84912004"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895336"
 ---
 # <a name="footfall-detection-pattern"></a>Patrón de detección de afluencia de compradores
 
@@ -50,7 +50,7 @@ Esta solución usa los siguientes componentes:
 | Azure | [Azure Event Hubs](/azure/event-hubs/) | Azure Event Hubs proporciona una plataforma escalable para la ingesta de datos anonimizados que se integra perfectamente con Azure Stream Analytics. |
 |  | [Azure Stream Analytics](/azure/stream-analytics/) | Un trabajo de Azure Stream Analytics agrega los datos anonimizados y los agrupa en ventanas de 15 segundos para su visualización. |
 |  | [Microsoft Power BI](https://powerbi.microsoft.com/) | Power BI proporciona una interfaz de panel fácil de usar para ver los resultados de Azure Stream Analytics. |
-| Azure Stack Hub | [App Service](/azure-stack/operator/azure-stack-app-service-overview.md) | El proveedor de recursos App Service (RP) proporciona una base para los componentes perimetrales, incluidas las características de hospedaje y administración de aplicaciones web, API y funciones. |
+| Azure Stack Hub | [App Service](/azure-stack/operator/azure-stack-app-service-overview) | El proveedor de recursos App Service (RP) proporciona una base para los componentes perimetrales, incluidas las características de hospedaje y administración de aplicaciones web, API y funciones. |
 | | Clúster del [motor de](https://github.com/Azure/aks-engine) Azure Kubernetes Service (AKS) | El RP de AKS con el clúster de AKS-Engine implementado en Azure Stack Hub proporciona un motor escalable y resistente para ejecutar el contenedor de Face API. |
 | | [Contenedores de Face API](/azure/cognitive-services/face/face-how-to-install-containers) de Azure Cognitive Services| El RP de Azure Cognitive Services con contenedores de Face API proporciona detección de visitantes exclusivos, de emociones y demográfica en la red privada de Contoso. |
 | | Blob Storage | Las imágenes capturadas con el kit de desarrollo de IA se cargan en el almacenamiento de blobs de Azure Stack Hub. |
