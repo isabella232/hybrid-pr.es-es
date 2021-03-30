@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 5ae6c4323324fa104cd0e5c7b5198492be14b8eb
-ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
+ms.openlocfilehash: ed2ad5bed8f4bd80d4a40ab7600842d5544ff97d
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88886822"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895421"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Implementación de una aplicación que se escala en toda la nube con Azure y Azure Stack Hub
 
@@ -30,7 +30,7 @@ En esta solución, creará un entorno de ejemplo para:
 > - Supervisar y realizar un seguimiento de las implementaciones.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![diagrama de fundamentos de aplicaciones híbridas](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub es una extensión de Azure. Azure Stack Hub aporta la agilidad e innovación de la informática en la nube a su entorno local, ya que habilita la única nube híbrida que permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
 > En el artículo [Consideraciones de diseño de aplicaciones híbridas](overview-app-design-considerations.md) se examinan los fundamentos de calidad del software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
@@ -39,16 +39,16 @@ En esta solución, creará un entorno de ejemplo para:
 
 - Suscripción de Azure. Si es necesario, cree una [cuenta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de comenzar.
 - Un sistema integrado de Azure Stack Hub o la implementación del Kit de desarrollo de Azure Stack (ASDK).
-  - Para obtener instrucciones para la instalación de Azure Stack Hub, consulte [Instalación del Kit de desarrollo de Azure Stack](/azure-stack/asdk/asdk-install.md).
+  - Para obtener instrucciones para la instalación de Azure Stack Hub, consulte [Instalación del Kit de desarrollo de Azure Stack](/azure-stack/asdk/asdk-install).
   - Para ver un script de automatización posterior a la implementación de ASDK, vaya a: [https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
   - Esta instalación puede tardar algunas horas en completarse.
-- Implemente los servicios PaaS de [App Service](/azure-stack/operator/azure-stack-app-service-deploy.md) en Azure Stack Hub.
-- [Cree planes u ofertas](/azure-stack/operator/service-plan-offer-subscription-overview.md) en el entorno de Azure Stack Hub.
-- [Cree una suscripción de inquilino](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm.md) dentro del entorno de Azure Stack Hub.
+- Implemente los servicios PaaS de [App Service](/azure-stack/operator/azure-stack-app-service-deploy) en Azure Stack Hub.
+- [Cree planes u ofertas](/azure-stack/operator/service-plan-offer-subscription-overview) en el entorno de Azure Stack Hub.
+- [Cree una suscripción de inquilino](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm) dentro del entorno de Azure Stack Hub.
 - Cree una aplicación web dentro de la suscripción de inquilino. Anote la nueva dirección URL de aplicación web, ya que la usará más adelante.
 - Implemente la máquina virtual (VM) de Azure Pipelines en la suscripción del inquilino.
 - Se requiere una máquina virtual Windows Server 2016 con .NET 3.5. Esta máquina virtual se compilará en la suscripción del inquilino en Azure Stack Hub como agente de compilación privado.
-- [Windows Server 2016 con la imagen de máquina virtual de SQL 2017](/azure-stack/operator/azure-stack-add-vm-image.md) está disponible en Marketplace de Azure Stack Hub. Si esta imagen no está disponible, trabaje con un operador de Azure Stack Hub para garantizar que se agrega al entorno.
+- [Windows Server 2016 con la imagen de máquina virtual de SQL 2017](/azure-stack/operator/azure-stack-add-vm-image) está disponible en Marketplace de Azure Stack Hub. Si esta imagen no está disponible, trabaje con un operador de Azure Stack Hub para garantizar que se agrega al entorno.
 
 ## <a name="issues-and-considerations"></a>Problemas y consideraciones
 
@@ -79,7 +79,7 @@ Actualice el archivo de zona DNS para el dominio. Azure AD comprobará la propie
 Configure la canalización híbrida de integración continua e implementación continua (CI/CD) para implementar aplicaciones web en Azure y Azure Stack Hub e insertar automáticamente los cambios en ambas nubes.
 
 > [!Note]  
-> Se requiere Azure Stack Hub con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Para más información, revise en la documentación de App Service [Requisitos previos para implementar App Service en Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md).
+> Se requiere Azure Stack Hub con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Para más información, revise en la documentación de App Service [Requisitos previos para implementar App Service en Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started).
 
 ### <a name="add-code-to-azure-repos"></a>Adición de código a Azure Repos
 
@@ -157,7 +157,7 @@ Azure Pipelines y Azure DevOps Services proporcionan una canalización con una g
   
       ![Seleccionar el paquete o la carpeta del entorno de Azure App Service](media/solution-deployment-guide-cross-cloud-scaling/image12.png)
 
-      ![Seleccionar el paquete o la carpeta del entorno de Azure App Service](media/solution-deployment-guide-cross-cloud-scaling/image13.png)
+      ![Cuadro de diálogo Selector de carpetas 1](media/solution-deployment-guide-cross-cloud-scaling/image13.png)
 
 9. Guarde todos los cambios y vuelva a la **canalización de versión**.
 
@@ -194,7 +194,7 @@ Azure Pipelines y Azure DevOps Services proporcionan una canalización con una g
 
     ![Seleccionar carpeta para la implementación de Azure App Service](media/solution-deployment-guide-cross-cloud-scaling/image22.png)
 
-    ![Seleccionar carpeta para la implementación de Azure App Service](media/solution-deployment-guide-cross-cloud-scaling/image23.png)
+    ![Cuadro de diálogo Selector de carpetas 2](media/solution-deployment-guide-cross-cloud-scaling/image23.png)
 
 18. En la pestaña Variable, agregue una variable denominada `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS`, establezca su valor como **true** y defina el ámbito en Azure Stack.
 
@@ -211,7 +211,7 @@ Azure Pipelines y Azure DevOps Services proporcionan una canalización con una g
 21. Guarde todos los cambios.
 
 > [!Note]  
-> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) cuando se creó una definición de versión desde una plantilla. Estos valores de configuración no se pueden modificar en la configuración de tareas; para hacerlo, debe seleccionar el elemento del entorno principal.
+> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables) cuando se creó una definición de versión desde una plantilla. Estos valores de configuración no se pueden modificar en la configuración de tareas; para hacerlo, debe seleccionar el elemento del entorno principal.
 
 ## <a name="publish-to-azure-stack-hub-via-visual-studio"></a>Publicación en Azure Stack Hub mediante Visual Studio
 
@@ -242,7 +242,7 @@ Ahora que existe la información del punto de conexión, la conexión de Azure P
 ## <a name="develop-the-app-build"></a>Desarrollo de la compilación de la aplicación
 
 > [!Note]  
-> Se requiere Azure Stack Hub con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Para más información, consulte [Requisitos previos para implementar App Service en Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md).
+> Se requiere Azure Stack Hub con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Para más información, consulte [Requisitos previos para implementar App Service en Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started).
 
 Use [plantillas de Azure Resource Manager](https://azure.microsoft.com/resources/templates/) como código de aplicación web de Azure Repos para implementar en ambas nubes.
 
@@ -329,7 +329,7 @@ La creación de una definición de versión es el último paso en el proceso de 
 23. Guarde todos los cambios.
 
 > [!Note]  
-> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) cuando se creó una definición de versión desde una plantilla. Esta configuración no puede modificarse en la configuración de la tarea, pero sí en los elementos del entorno primario.
+> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables) cuando se creó una definición de versión desde una plantilla. Esta configuración no puede modificarse en la configuración de la tarea, pero sí en los elementos del entorno primario.
 
 ## <a name="create-a-release"></a>Creación de una versión
 
@@ -347,7 +347,7 @@ La creación de una definición de versión es el último paso en el proceso de 
 
 2. Seleccione el icono de persona en la columna **Acción** correspondiente a una aprobación previa o posterior a la implementación para ver quién aprobó (o rechazó) la implementación y el mensaje que especificó.
 
-3. Una vez finalizada la implementación, se muestra el archivo de registro completo en el panel derecho. Seleccione cualquier **paso** en el panel izquierdo para ver el archivo de registro de un paso individual, como **Initialize Job** (Inicializar trabajo). La posibilidad de ver registros individuales facilita realizar el seguimiento y la depuración de partes individuales de la implementación general. **Guarde** el archivo de registro de un paso, o bien seleccione**Download all logs as zip** (Descargar todos los registros como zip).
+3. Una vez finalizada la implementación, se muestra el archivo de registro completo en el panel derecho. Seleccione cualquier **paso** en el panel izquierdo para ver el archivo de registro de un paso individual, como **Initialize Job** (Inicializar trabajo). La posibilidad de ver registros individuales facilita realizar el seguimiento y la depuración de partes individuales de la implementación general. **Guarde** el archivo de registro de un paso, o bien seleccione **Download all logs as zip** (Descargar todos los registros como zip).
 
 4. Abra la pestaña **Resumen** para ver información general sobre la versión. Esta vista muestra detalles de la compilación, los entornos en los que se implementó, el estado de implementación y otra información sobre la versión.
 

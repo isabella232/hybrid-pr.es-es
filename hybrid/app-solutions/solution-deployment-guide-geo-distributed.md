@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 27d07070becfa902a715b451baae7c81c7e4b46f
-ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
+ms.openlocfilehash: 9fa2c351d2c13d85fe1adb17a35e165de96ea2a2
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88886839"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895438"
 ---
 # <a name="direct-traffic-with-a-geo-distributed-app-using-azure-and-azure-stack-hub"></a>Dirigir el tráfico con una aplicación distribuida geográficamente mediante Azure y Azure Stack Hub
 
@@ -61,7 +61,7 @@ Antes de crear el entorno de una aplicación distribuida, resulta útil conocer 
 - **Convención de nomenclatura para las aplicaciones:** dado que se van a implementar varias instancias de la aplicación, se necesita un nombre para cada instancia de la aplicación implementada. Con el entorno de App Service Environment para Power Apps, el mismo nombre de aplicación se puede usar en varios entornos. Dado que cada uno tiene un sufijo de dominio único, los desarrolladores pueden reutilizar el mismo nombre de aplicación en cada entorno. Por ejemplo, un desarrollador podría asignar los siguientes nombres a las aplicaciones:*miapp.foo1.p.azurewebsites.net*, *miapp.foo2.p.azurewebsites.net*, *miapp.foo3.p.azurewebsites.net, etc*. Para la aplicación que se usa aquí, cada instancia de la aplicación tiene un nombre único. Los nombres de las instancias de aplicación usados son *webfrontend1*, *webfrontend2* y *webfrontend3*.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagrama de fundamentos de las aplicaciones híbridas](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub es una extensión de Azure. Azure Stack Hub aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
 > En el artículo [Consideraciones de diseño de aplicaciones híbridas](overview-app-design-considerations.md) se examinan los fundamentos de calidad del software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
@@ -97,7 +97,7 @@ Actualice el archivo de zona DNS para el dominio. Azure AD puede entonces compro
 Configure la canalización de integración y entrega continuas (CI/CD) híbrida para implementar la aplicación web en Azure y Azure Stack Hub e insertar automáticamente los cambios en ambas nubes.
 
 > [!Note]  
-> Se requiere Azure Stack Hub con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Para más información, consulte [Requisitos previos para implementar App Service en Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md).
+> Se requiere Azure Stack Hub con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Para más información, consulte [Requisitos previos para implementar App Service en Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started).
 
 #### <a name="add-code-to-azure-repos"></a>Adición de código a Azure Repos
 
@@ -173,7 +173,7 @@ Azure DevOps Services proporcionan una canalización con una gran capacidad de c
   
       ![Selección del paquete o la carpeta del entorno de Azure App Service en Azure DevOps Services](media/solution-deployment-guide-geo-distributed/image12.png)
 
-      ![Selección del paquete o la carpeta del entorno de Azure App Service en Azure DevOps Services](media/solution-deployment-guide-geo-distributed/image13.png)
+      ![Cuadro de diálogo Selector de carpetas 1](media/solution-deployment-guide-geo-distributed/image13.png)
 
 9. Guarde todos los cambios y vuelva a la **canalización de versión**.
 
@@ -212,7 +212,7 @@ Azure DevOps Services proporcionan una canalización con una gran capacidad de c
 
     ![Selección de la carpeta de Implementación de Azure App Service en Azure DevOps Services](media/solution-deployment-guide-geo-distributed/image22.png)
 
-    ![Selección de la carpeta de Implementación de Azure App Service en Azure DevOps Services](media/solution-deployment-guide-geo-distributed/image23.png)
+    ![Cuadro de diálogo Selector de carpetas 2](media/solution-deployment-guide-geo-distributed/image23.png)
 
 18. En la pestaña Variable, agregue una variable denominada `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS`, establezca su valor como **true** y defina el ámbito en Azure Stack Hub.
 
@@ -229,7 +229,7 @@ Azure DevOps Services proporcionan una canalización con una gran capacidad de c
 21. Guarde todos los cambios.
 
 > [!Note]  
-> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) cuando se creó una definición de versión desde una plantilla. Estos valores de configuración no se pueden modificar en la configuración de tareas; para hacerlo, debe seleccionar el elemento del entorno principal.
+> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables) cuando se creó una definición de versión desde una plantilla. Estos valores de configuración no se pueden modificar en la configuración de tareas; para hacerlo, debe seleccionar el elemento del entorno principal.
 
 ## <a name="part-2-update-web-app-options"></a>Parte 2: Actualizar las opciones de la aplicación web
 
@@ -492,7 +492,7 @@ Cuando App Service termina de cargar el certificado, este aparece en la página 
 
 2. En la página **Agregar enlace SSL**, use las listas desplegables para seleccionar el nombre de dominio que se va a proteger, así como el certificado va a utilizar.
 
-3. En **Tipo de SSL**, seleccione si se va a usar [**Indicación de nombre de servidor (SNI)** ](https://en.wikipedia.org/wiki/Server_Name_Indication) o SSL basada en IP.
+3. En **Tipo de SSL**, seleccione si se va a usar [**Indicación de nombre de servidor (SNI)**](https://en.wikipedia.org/wiki/Server_Name_Indication) o SSL basada en IP.
 
     - **SSL basada en SNI**: Se pueden agregar varios enlaces SSL basados en SNI. Esta opción permite que varios certificados SSL protejan varios dominios en una misma dirección IP. Los exploradores más modernos (como Internet Explorer, Chrome, Firefox y Opera) admiten SNI (encontrará información de compatibilidad con exploradores más completa en [Indicación de nombre de servidor](https://wikipedia.org/wiki/Server_Name_Indication)).
 
