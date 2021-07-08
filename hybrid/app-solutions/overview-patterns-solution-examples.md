@@ -3,18 +3,18 @@ title: Ejemplos de soluciones y patrones híbridos de Azure y Azure Stack Hub
 description: Información general sobre ejemplos de soluciones y patrones híbridos para aprender y compilar soluciones híbridas en Azure y Azure Stack Hub.
 author: BryanLa
 ms.topic: overview
-ms.date: 11/05/2019
+ms.date: 05/24/2021
 ms.author: bryanla
 ms.reviewer: anajod
-ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4f86e5ae4b8b9bd7693617b07419b67dfcf05dc1
-ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
+ms.lastreviewed: 05/24/2021
+ms.openlocfilehash: 9f3f13c23bec31c5132c7e90294356b9463fd72b
+ms.sourcegitcommit: cf2c4033d1b169f5b63980ce1865281366905e2e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104895319"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "110343865"
 ---
-# <a name="hybrid-patterns-and-solution-examples-for-azure-and-azure-stack"></a>Ejemplos de soluciones y patrones híbridos de Azure y Azure Stack
+# <a name="hybrid-solution-patterns-and-examples-for-azure-and-azure-stack"></a>Patrones y ejemplos de soluciones híbridas para Azure y Azure Stack
 
 Microsoft proporciona soluciones y productos de Azure y Azure Stack como un ecosistema coherente de Azure. La familia de productos de Microsoft Azure Stack es una extensión de Azure.
 
@@ -29,11 +29,11 @@ Azure Stack lleva la agilidad de la informática en la nube a su entorno local y
 
 Las aplicaciones que abarcan las nubes también se conocen como *aplicaciones híbridas*. Puede compilar las aplicaciones en la nube híbrida en Azure e implementarlas en su centro de datos conectado o desconectado ubicado en cualquier lugar.
 
-Los escenarios de aplicaciones híbridas varían significativamente según los recursos que haya disponibles para el desarrollo. También abarcan aspectos como la región geográfica, la seguridad, el acceso a Internet, etc. Aunque tal vez las soluciones y los patrones que se describen aquí no den respuesta a todos los requisitos, proporcionan instrucciones y ejemplos que se pueden explorar y reutilizar durante la implementación de soluciones híbridas.
+Los escenarios de aplicaciones híbridas varían significativamente según los recursos que haya disponibles para el desarrollo. También abarcan aspectos como la región geográfica, la seguridad, el acceso a Internet, etc. Aunque es posible que los patrones y ejemplos de soluciones no cumplan todos los requisitos, proporcionan directrices y ejemplos para explorar y reusar al implementar soluciones híbridas.
 
-## <a name="design-patterns"></a>Patrones de diseño
+## <a name="solution-patterns"></a>Patrones de soluciones
 
-Los patrones de diseño ofrecen guías de diseño repetibles y generalizadas a partir de escenarios y experiencias de clientes reales. Un patrón es abstracto, lo que permite que se pueda aplicar a distintos tipos de escenarios o sectores verticales. Cada patrón documenta el contexto y el problema, y proporciona información general sobre una solución de ejemplo. La solución de ejemplo está pensada como una posible implementación del patrón.
+Los patrones de soluciones ofrecen instrucciones de diseño repetibles y generalizadas a partir de escenarios y experiencias de clientes reales. Un patrón es abstracto, lo que permite que se pueda aplicar a distintos tipos de escenarios o sectores verticales. Cada patrón documenta el contexto y el problema, y proporciona información general sobre una solución de ejemplo. La solución de ejemplo está pensada como una posible implementación del patrón.
 
 Hay dos tipos de artículos sobre patrones:
 
