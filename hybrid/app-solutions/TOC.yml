@@ -33,29 +33,29 @@
 - name: Guías de implementación de soluciones
   items:
     - name: Escalado de toda la nube
-      href: solution-deployment-guide-cross-cloud-scaling.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling
     - name: Escenario de escalado entre nubes (datos locales)
-      href: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling-onprem-data
     - name: CI/CD híbridas de DevOps
       href: 'https://aka.ms/hybriddevopsdeploy'
     - name: Detección de afluencia de compradores (comercio minorista)
-      href: solution-deployment-guide-retail-footfall-detection.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection
     - name: Aplicación distribuida geográficamente
-      href: solution-deployment-guide-geo-distributed.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed
     - name: Clúster de Kubernetes de alta disponibilidad
-      href: solution-deployment-guide-highly-available-kubernetes.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes
     - name: Conectividad híbrida
-      href: solution-deployment-guide-connectivity.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-connectivity
     - name: Identidad híbrida
-      href: solution-deployment-guide-identity.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-identity
     - name: Retransmisión híbrida
       href: 'https://aka.ms/hybridrelaydeployment'
     - name: Datos en capas
       href: 'https://aka.ms/tiereddatadeploy'
     - name: MongoDB de alta disponibilidad
-      href: solution-deployment-guide-mongodb-ha.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-mongodb-ha
     - name: "SQL\_Server\_2016 de alta disponibilidad"
-      href: solution-deployment-guide-sql-ha.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-sql-ha
     - name: Existencias agotadas en el perímetro
       href: 'https://aka.ms/edgeinferencingdeploy'
     - name: Entrenamiento de modelos de aprendizaje automático en el perímetro

@@ -295,15 +295,15 @@ additionalContent:
               text: Clúster de Kubernetes de alta disponibilidad
         - title: Implementación de ejemplos de soluciones de aplicaciones
           links:
-            - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling
               text: Escalado de toda la nube
             - url: 'https://aka.ms/hybriddevopsdeploy'
               text: CI/CD híbridas de DevOps
-            - url: ./app-solutions/solution-deployment-guide-retail-footfall-detection.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection
               text: Detección de afluencia de compradores (comercio minorista)
-            - url: ./app-solutions/solution-deployment-guide-geo-distributed.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed
               text: Aplicación distribuida geográficamente
-            - url: ./app-solutions/solution-deployment-guide-highly-available-kubernetes.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes
               text: Clúster de Kubernetes de alta disponibilidad
     - title: Recursos de evaluación y aprendizaje
       items:
