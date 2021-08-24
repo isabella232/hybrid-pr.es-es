@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod2019
-ms.openlocfilehash: 1f6243927390c7a520c2607c722664b2d31fc07f
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
-ms.translationtype: MT
+ms.openlocfilehash: 3c839d9bf3b6c3e1ff50cc695fd5f1a1127793d2
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911855"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281234"
 ---
 # <a name="geo-distributed-app-pattern"></a>Patrón de aplicación distribuida geográficamente
 
@@ -82,4 +82,4 @@ Para más información sobre los temas presentados en este artículo:
 - Consulte [Consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para más información sobre los procedimientos recomendados y para obtener respuestas a preguntas adicionales.
 - Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para más información sobre toda la gama de productos y soluciones.
 
-Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de la solución de aplicaciones distribuidas geográficamente](solution-deployment-guide-geo-distributed.md). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes. Aprenda a dirigir el tráfico a puntos de conexión específicos en función de varias métricas con el patrón de aplicaciones distribuidas geográficamente. La creación de un perfil de Traffic Manager con la configuración de puntos de conexión y enrutamiento geográfico garantiza que la información se enruta a puntos de conexión en función de los requisitos regionales, la legislación internacional y corporativa, y su necesidad en cuanto a los datos.
+Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de la solución de aplicaciones distribuidas geográficamente](/azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes. Aprenda a dirigir el tráfico a puntos de conexión específicos en función de varias métricas con el patrón de aplicaciones distribuidas geográficamente. La creación de un perfil de Traffic Manager con la configuración de puntos de conexión y enrutamiento geográfico garantiza que la información se enruta a puntos de conexión en función de los requisitos regionales, la legislación internacional y corporativa, y su necesidad en cuanto a los datos.

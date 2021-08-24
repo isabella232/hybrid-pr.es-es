@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: a830f96e97c347cbbcc09a1b17f4836ecb6eb3e6
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
-ms.translationtype: MT
+ms.openlocfilehash: 90e0c177b5eaee4d223b4613e0b2ddf385fa799c
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911963"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281268"
 ---
 # <a name="cross-cloud-scaling-pattern"></a>Patrón de escalado de toda la nube
 
@@ -55,7 +55,7 @@ El sistema de nombres de dominio, o DNS, es responsable de traducir (o resolver)
 
 Un entorno para hospedar la canalización de compilación.
 
-#### <a name="app-resources"></a>Recursos de la aplicación
+#### <a name="app-resources"></a>Recursos de aplicación
 
 Los recursos de la aplicación deben ser capaces de reducirse y escalarse horizontalmente, como los conjuntos de escalado de máquinas virtuales y los contenedores.
 
@@ -73,7 +73,7 @@ Las direcciones IP públicas se usan para enrutar el tráfico entrante mediante 
 
 Un entorno para hospedar la canalización de compilación.
 
-#### <a name="app-resources"></a>Recursos de la aplicación
+#### <a name="app-resources"></a>Recursos de aplicación
 
 Los recursos de la aplicación deben ser capaces de reducirse y escalarse horizontalmente, como los conjuntos de escalado de máquinas virtuales y los contenedores.
 
@@ -123,4 +123,4 @@ Para más información sobre los temas presentados en este artículo:
 - Consulte [Consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para más información sobre los procedimientos recomendados y obtener respuestas a preguntas adicionales.
 - Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para más información sobre toda la gama de productos y soluciones.
 
-Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de soluciones de escalado entre nubes](solution-deployment-guide-cross-cloud-scaling.md). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes. Aprenderá a crear una solución entre nubes que proporcione un proceso desencadenado manualmente para cambiar de una aplicación web hospedada en Azure Stack Hub a una aplicación web hospedada en Azure. También aprenderá a usar el escalado automático a través de Traffic Manager, garantizando una utilidad en la nube flexible y escalable bajo carga.
+Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de soluciones de escalado entre nubes](/azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes. Aprenderá a crear una solución entre nubes que proporcione un proceso desencadenado manualmente para cambiar de una aplicación web hospedada en Azure Stack Hub a una aplicación web hospedada en Azure. También aprenderá a usar el escalado automático a través de Traffic Manager, garantizando una utilidad en la nube flexible y escalable bajo carga.

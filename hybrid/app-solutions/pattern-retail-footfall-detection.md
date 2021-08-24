@@ -7,12 +7,12 @@ ms.date: 10/31/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 10/31/2019
-ms.openlocfilehash: 866557ec3af2337e9f034da84cf417675508563b
-ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
+ms.openlocfilehash: 79fb39d418bed53ef6a78980fcd9188bdf6e57ae
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104895336"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281285"
 ---
 # <a name="footfall-detection-pattern"></a>Patrón de detección de afluencia de compradores
 
@@ -88,4 +88,4 @@ Para más información sobre los temas presentados en este artículo:
 - Consulte [Patrón de datos en niveles](https://aka.ms/tiereddatadeploy), que aprovecha el patrón de detección de afluencia de compradores.
 - Para más información sobre el uso de Custom Vision, consulte [Kit de desarrollo de IA de Custom Vision](https://azure.github.io/Vision-AI-DevKit-Pages/). 
 
-Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de la detección de afluencia de compradores](solution-deployment-guide-retail-footfall-detection.md). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes.
+Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de la detección de afluencia de compradores](/azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes.

@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: edbb608fbf8e5288f29572bfe4cca98ffb3cb8fc
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
-ms.translationtype: MT
+ms.openlocfilehash: 5c8e3adb621ae4322bf6d60792fc307dbb24ff90
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911962"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281251"
 ---
 # <a name="cross-cloud-scaling-on-premises-data-pattern"></a>Patrón de escalado entre nubes (datos locales)
 
@@ -37,9 +37,9 @@ Esta solución usa los siguientes componentes:
 | Nivel | Componente | Descripción |
 |----------|-----------|-------------|
 | Azure | Azure App Service | [Azure App Service](/azure/app-service/) permite compilar y hospedar aplicaciones web, aplicaciones de API de RESTful y Azure Functions. Todo en el lenguaje de programación de su elección, sin administrar infraestructura alguna. |
-| | Azure Virtual Network| [Azure Virtual Network (VNet)](/azure/virtual-network/virtual-networks-overview) es el bloque de creación fundamental de redes privadas en Azure. VNet permite varios tipos de recursos de Azure, como Virtual Machines (VM), para comunicarse de forma segura entre usuarios, con Internet y con las redes locales. La solución también muestra el uso de componentes de red adicionales:<br>- subredes de puerta de enlace y aplicación.<br>- una puerta de enlace de red local.<br>- una puerta de enlace de red virtual, que actúa como conexión de puerta de enlace de VPN de sitio a sitio.<br>- una dirección IP pública.<br>- una conexión VPN de punto a sitio.<br>- Azure DNS para hospedar dominios DNS y proporcionar la resolución de nombres. |
-| | Administrador de tráfico de Azure | [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) es un equilibrador de carga de tráfico basado en DNS. Permite controlar la distribución del tráfico de los usuarios para puntos de conexión de servicio en distintos centros de datos. |
-| | Azure Application Insights | [Application Insights](/azure/azure-monitor/app/app-insights-overview) es un servicio de Application Performance Management extensible para desarrolladores web que compilan y administran aplicaciones en varias plataformas.|
+| | Azure Virtual Network| [Azure Virtual Network (VNet)](/azure/virtual-network/virtual-networks-overview) es el bloque de creación fundamental de redes privadas en Azure. VNet permite varios tipos de recursos de Azure, como Virtual Machines (VM), para comunicarse de forma segura entre usuarios, con Internet y con las redes locales. La solución también muestra el uso de componentes de red adicionales:<br>- subredes de puerta de enlace y aplicación.<br>- una puerta de enlace de red local.<br>- una puerta de enlace de red virtual, que actúa como conexión de puerta de enlace de VPN de sitio a sitio.<br>- una dirección IP pública.<br>- una conexión VPN de punto a sitio.<br>- Azure DNS para hospedar dominios DNS y proporcionar la resolución de nombres. |
+| | Azure Traffic Manager | [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) es un equilibrador de carga de tráfico basado en DNS. Permite controlar la distribución del tráfico de los usuarios para puntos de conexión de servicio en distintos centros de datos. |
+| | Azure Application Insights | [Application Insights](/azure/azure-monitor/app/app-insights-overview) es un servicio de Application Performance Management extensible para desarrolladores web que compilan y administran aplicaciones en varias plataformas.|
 | | Azure Functions | [Azure Functions](/azure/azure-functions/) permite ejecutar el código en un entorno sin servidor sin necesidad de crear antes una máquina virtual o publicar una aplicación web. |
 | | Escalado automático de Azure | El [escalado automático](/azure/azure-monitor/platform/autoscale-overview) es una característica que está integrada en Cloud Services, Virtual Machines y Web Apps. La característica permite a las aplicaciones obtener sus mejores resultados al cambiar la demanda. Las aplicaciones se ajustarán para los picos de tráfico, comunicándole cuándo cambian las métricas, y el escalado según sea necesario. |
 | Azure Stack Hub | Proceso de IaaS | Azure Stack Hub permite usar el mismo modelo de aplicación, el portal de autoservicio y las API que habilita Azure. IaaS de Azure Stack Hub permite una amplia gama de tecnologías de código abierto para implementaciones de nube híbrida coherentes. En el ejemplo de la solución se usa una máquina virtual de Windows Server para SQL Server, por ejemplo.|
@@ -57,7 +57,7 @@ Tenga en cuenta los puntos siguientes al decidir cómo implementar esta solució
 
 Azure y Azure Stack Hub resultan especialmente adecuados para dar apoyo a las necesidades de las empresas actuales distribuidas globalmente.
 
-#### <a name="hybrid-cloud-without-the-hassle"></a>Nube híbrida sin inconvenientes
+#### <a name="hybrid-cloud-without-the-hassle"></a>Nube híbrida sin los inconvenientes
 
 Microsoft ofrece una integración incomparable de los recursos locales con Azure Stack Hub y Azure en una solución unificada. Esta integración acaba con los inconvenientes de administrar varias soluciones específicas y una combinación de los proveedores de nube. Con el escalado entre nubes, la eficacia de Azure se consigue con solo unos clics. Solo tiene que conectar su instancia de Azure Stack Hub a Azure con la ampliación en la nube y sus datos y aplicaciones estarán disponibles en Azure si es necesario.
 
@@ -137,4 +137,4 @@ Para más información sobre los temas presentados en este artículo:
 - Consulte [Consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para más información sobre los procedimientos recomendados y responder a preguntas adicionales.
 - Este patrón usa la familia de productos de Azure Stack, incluido Azure Stack Hub. Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para más información sobre toda la gama de productos y soluciones.
 
-Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de soluciones de escalado entre nubes (datos locales)](solution-deployment-guide-cross-cloud-scaling-onprem-data.md). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes.
+Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de soluciones de escalado entre nubes (datos locales)](/azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling-onprem-data). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes.
